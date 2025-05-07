@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>السعيد هاني الفقي | Front-end Developer</title>
-  <!-- Preconnect for performance -->
+
+  <!-- Performance Optimizations -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-  <!-- Theme Color -->
-  <meta name="theme-color" content="#2a2a72" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Theme color for mobile -->
+  <meta name="theme-color" content="#2a2a72">
 </head>
 <body lang="en">
 
@@ -32,7 +37,7 @@
     </div>
   </nav>
 
-  <!-- Hero -->
+  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container text-center">
       <img loading="lazy" src="images/logo.png" alt="Logo" class="logo-img">
@@ -41,7 +46,7 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
+  <!-- Portfolio Section -->
   <section id="portfolio" class="portfolio">
     <div class="container">
       <h2 data-en="My Projects" data-ar="مشاريعي" class="section-title">My Projects</h2>
@@ -78,7 +83,7 @@
     </div>
   </section>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
       <h2 data-en="About Me" data-ar="عني" class="section-title">About Me</h2>
@@ -90,14 +95,14 @@
     </div>
   </section>
 
-  <!-- Contact -->
+  <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
       <h2 data-en="Get in Touch" data-ar="تواصل معي" class="section-title">Get in Touch</h2>
       <form class="contact-form" action="#" method="POST">
         <input type="text" name="name" placeholder="Name / الاسم" required>
         <input type="tel" name="phone" placeholder="Phone / رقم الهاتف" required>
-        <textarea name="message" placeholder="Message / الرسالة"></textarea>
+        <textarea name="message" rows="4" placeholder="Message / الرسالة" required></textarea>
         <button type="submit" data-en="Send" data-ar="إرسال">Send</button>
       </form>
       <div class="social">
@@ -106,6 +111,7 @@
     </div>
   </section>
 
+  <!-- Main JS -->
   <script src="js/script.js" defer></script>
 </body>
-          </html>
+</html>

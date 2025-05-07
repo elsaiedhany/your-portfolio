@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private/
+Allow: /
+Sitemap: https://elsaiedhany.github.io/your-portfolio/sitemap.xml
+Host: elsaiedhany.github.io

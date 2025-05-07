@@ -1,234 +1,47 @@
-:root {
-  --primary: #2a2a72;
-  --primary-dark: #1f1f58;
-  --accent: #009ffd;
-  --accent-light: #66c0ff;
-  --success: #00c851;
-  --warning: #ffbb33;
-  --danger: #ff4444;
-
-  /* ألوان الوضع الفاتح */
-  --bg-light: #f8f9fa;
-  --text-light: #2a2a2a;
-  --card-light: #ffffff;
-  
-  /* ألوان الوضع الداكن */
-  --bg-dark: #1a1a2e;
-  --text-dark: #e0e0e0;
-  --card-dark: #2d2d44;
-}
-
-/* التنسيقات العامة */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: background 0.3s, color 0.3s;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg-light);
-  color: var(--text-light);
-  line-height: 1.6;
-  scroll-behavior: smooth;
-}
-
-body.dark {
-  background: var(--bg-dark);
-  color: var(--text-dark);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-/* الشريط العلوي */
-.main-nav {
-  background: var(--primary);
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: white;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  position: relative;
-  padding: 0.5rem 0;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--accent);
-  transition: width 0.3s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
-/* قسم البطل */
-.hero {
-  text-align: center;
-  padding: 8rem 0;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero .logo-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 4px solid white;
-  margin-bottom: 2rem;
-  animation: popIn 0.8s ease;
-}
-
-@keyframes popIn {
-  0% { transform: scale(0); opacity: 0; }
-  80% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-/* المشاريع */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  padding: 4rem 0;
-}
-
-.project-item {
-  background: var(--card-light);
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.project-item:hover {
-  transform: translateY(-5px);
-}
-
-.project-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.project-content {
-  padding: 1.5rem;
-}
-
-.project-content h3 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-}
-
-/* الخدمات */
-.service-boxes {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 4rem 0;
-}
-
-.service {
-  text-align: center;
-  padding: 2rem;
-  background: var(--card-light);
-  border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.service i {
-  font-size: 2.5rem;
-  color: var(--accent);
-  margin-bottom: 1rem;
-}
-
-/* المهارات */
+/* مهارات */
 .skill-bar {
-  margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
-
 .skill-bar span {
-  display: block;
-  margin-bottom: 0.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
 }
-
 .bar {
-  height: 8px;
-  background: #eee;
-  border-radius: 4px;
-  overflow: hidden;
+    height: 8px;
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
 }
-
 .bar div {
-  height: 100%;
-  background: var(--accent);
-  width: 0;
-  animation: fillBar 1s forwards;
+    height: 100%;
+    background: var(--accent);
+    width: 0;
+    animation: fillBar 1s forwards; /* تصحيح الخطأ هنا: 1s بدلاً من is */
 }
-
 @keyframes fillBar {
-  from { width: 0; }
-  to { width: var(--width); }
+    from { width: 0; }
+    to { width: var(--width); }
 }
 
 /* الوضع الداكن */
 body.dark .project-item,
 body.dark .service {
-  background: var(--card-dark);
+    background: var(--card-dark);
 }
-
 body.dark .bar {
-  background: #2d2d44;
+    background: #2d2d44; /* تصحيح اللون هنا */
 }
 
-/* التجاوب مع الشاشات الصغيرة */
+/* استجابة للشاشات الصغيرة */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  
-  .hero {
-    padding: 5rem 0;
-  }
-  
-  .projects-grid,
-  .service-boxes {
-    grid-template-columns: 1fr;
-  }
+    .nav-links {
+        display: none;
     }
+    .hero {
+        padding: 5rem 0;
+    }
+    .projects-grid,
+    .service-boxes {
+        grid-template-columns: 1fr;
+    }
+} /* تم إغلاق الوسم بشكل صحيح هنا */

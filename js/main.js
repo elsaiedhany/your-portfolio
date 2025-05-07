@@ -1,34 +1,30 @@
+// DOM Ready
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+  // Language toggle
+  const switcher = document.getElementById('langSwitch');
+  switcher.addEventListener('click', () => {
+    const html = document.documentElement;
+    const isEn = html.getAttribute('lang') === 'en';
+    html.setAttribute('lang', isEn ? 'ar' : 'en');
+    switcher.textContent = isEn ? 'EN' : 'عربى';
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.textContent = el.getAttribute(isEn ? 'data-ar' : 'data-en');
     });
+  });
 
-    // Scroll animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
+  // Smooth scrolling
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
+  });
 
-    // Dark mode toggle
-    const darkModeToggle = document.createElement('button');
-    darkModeToggle.textContent = '🌓';
-    darkModeToggle.classList.add('dark-mode-toggle');
-    document.body.appendChild(darkModeToggle);
-
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.project-item').forEach(item => observer.observe(item));
 });

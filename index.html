@@ -24,7 +24,7 @@
 <body lang="en">
 
   <!-- Navigation -->
-  <nav class="main-nav sticky">
+  <nav class="main-nav">
     <div class="container flex">
       <div class="logo">Alsaied Hany El Feki</div>
       <ul class="nav-links">
@@ -35,27 +35,38 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
       <button class="lang-switch" id="langSwitch">عربى</button>
+      <button id="navToggle" class="nav-toggle"><i class="fas fa-bars"></i></button>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container text-center">
-      <img loading="lazy" src="images/logo.png" alt="Logo" class="logo-img">
-      <h1 data-en="Front-end Developer" data-ar="مطور واجهات أمامية">Front-end Developer</h1>
-      <p data-en="Building modern responsive experiences" data-ar="بناء تجارب متجاوبة وعصرية">Building modern responsive experiences</p>
+      <!-- placeholder for logo space -->
+      <div class="logo-img-placeholder"></div>
+
+      <h1 data-en="Front-end Developer" data-ar="مطور واجهات أمامية">
+        Front-end Developer
+      </h1>
+      <p data-en="Building modern responsive experiences"
+         data-ar="بناء تجارب متجاوبة وعصرية">
+        Building modern responsive experiences
+      </p>
     </div>
   </section>
 
   <!-- Portfolio Section -->
   <section id="portfolio" class="portfolio">
     <div class="container">
-      <h2 data-en="My Projects" data-ar="مشاريعي" class="section-title">My Projects</h2>
+      <h2 data-en="My Projects" data-ar="مشاريعي" class="section-title">
+        My Projects
+      </h2>
       <div class="projects-grid">
         <!-- Dummy Project 1 -->
         <div class="project-item">
-          <a href="#" target="_blank">
-            <img loading="lazy" src="images/project1.jpg" alt="Project 1">
+          <a href="#" target="_blank" class="project-link">
+            <div class="project-image-placeholder"></div>
           </a>
           <div class="project-content">
             <h3>Project One</h3>
@@ -65,8 +76,8 @@
         </div>
         <!-- Dummy Project 2 -->
         <div class="project-item">
-          <a href="#" target="_blank">
-            <img loading="lazy" src="images/project2.jpg" alt="Project 2">
+          <a href="#" target="_blank" class="project-link">
+            <div class="project-image-placeholder"></div>
           </a>
           <div class="project-content">
             <h3>Project Two</h3>
@@ -76,8 +87,8 @@
         </div>
         <!-- Dummy Project 3 -->
         <div class="project-item">
-          <a href="#" target="_blank">
-            <img loading="lazy" src="images/project3.jpg" alt="Project 3">
+          <a href="#" target="_blank" class="project-link">
+            <div class="project-image-placeholder"></div>
           </a>
           <div class="project-content">
             <h3>Project Three</h3>
@@ -92,7 +103,9 @@
   <!-- Services Section -->
   <section id="services" class="services">
     <div class="container">
-      <h2 data-en="My Services" data-ar="خدماتي" class="section-title">My Services</h2>
+      <h2 data-en="My Services" data-ar="خدماتي" class="section-title">
+        My Services
+      </h2>
       <div class="service-boxes flex">
         <div class="service">
           <i class="fas fa-code fa-2x"></i>
@@ -116,24 +129,32 @@
   <!-- About Section -->
   <section id="about" class="about">
     <div class="container">
-      <h2 data-en="About Me" data-ar="عني" class="section-title">About Me</h2>
+      <h2 data-en="About Me" data-ar="عني" class="section-title">
+        About Me
+      </h2>
       <article>
-        <p data-en="I’m Alsaied Hany El Feki, a passionate Front-end Developer with strong command of HTML5, CSS3, and JavaScript. My mission is to craft pixel-perfect interfaces and seamless user experiences." data-ar="أنا السعيد هاني الفقي، مطور واجهات أمامية شغوف بخبرة قوية في HTML5, CSS3, وJavaScript. هدفي إنشاء واجهات دقيقة وتجارب مستخدم سلسة.">I’m Alsaied Hany El Feki, a passionate Front-end Developer with strong command of HTML5, CSS3, and JavaScript. My mission is to craft pixel-perfect interfaces and seamless user experiences.</p>
-        <p data-en="With an eye for detail and creative animations, I transform static designs into dynamic, interactive web pages." data-ar="لدي اهتمام كبير بالتفاصيل ولمسة فنية في الأنيميشن، أحول التصاميم الثابتة إلى صفحات ويب ديناميكية وتفاعلية.">With an eye for detail and creative animations, I transform static designs into dynamic, interactive web pages.</p>
+        <p data-en="I’m Alsaied Hany El Feki, a passionate Front-end Developer with strong command of HTML5, CSS3, and JavaScript. My mission is to craft pixel-perfect interfaces and seamless user experiences."
+           data-ar="أنا السعيد هاني الفقي، مطور واجهات أمامية شغوف بخبرة قوية في HTML5, CSS3, وJavaScript. هدفي إنشاء واجهات دقيقة وتجارب مستخدم سلسة.">
+          I’m Alsaied Hany El Feki, a passionate Front-end Developer with strong command of HTML5, CSS3, and JavaScript. My mission is to craft pixel-perfect interfaces and seamless user experiences.
+        </p>
+        <p data-en="With an eye for detail and creative animations, I transform static designs into dynamic, interactive web pages."
+           data-ar="لدي اهتمام كبير بالتفاصيل ولمسة فنية في الأنيميشن، أحول التصاميم الثابتة إلى صفحات ويب ديناميكية وتفاعلية.">
+          With an eye for detail and creative animations, I transform static designs into dynamic, interactive web pages.
+        </p>
       </article>
       <div class="skills">
         <h3>My Skills</h3>
-        <div class="skill-bar">
+        <div class="skill-bar" data-target="90%">
           <span>HTML</span>
-          <div class="bar"><div style="width: 90%;"></div></div>
+          <div class="bar"><div></div></div>
         </div>
-        <div class="skill-bar">
+        <div class="skill-bar" data-target="80%">
           <span>CSS</span>
-          <div class="bar"><div style="width: 80%;"></div></div>
+          <div class="bar"><div></div></div>
         </div>
-        <div class="skill-bar">
+        <div class="skill-bar" data-target="70%">
           <span>JavaScript</span>
-          <div class="bar"><div style="width: 70%;"></div></div>
+          <div class="bar"><div></div></div>
         </div>
       </div>
     </div>
@@ -142,11 +163,13 @@
   <!-- Contact Section -->
   <section id="contact" class="contact">
     <div class="container">
-      <h2 data-en="Get in Touch" data-ar="تواصل معي" class="section-title">Get in Touch</h2>
+      <h2 data-en="Get in Touch" data-ar="تواصل معي" class="section-title">
+        Get in Touch
+      </h2>
       <form class="contact-form" action="#" method="POST">
-        <input type="text" name="name" placeholder="Name / الاسم" required>
-        <input type="email" name="email" placeholder="Email / البريد الإلكتروني" required>
-        <textarea name="message" rows="4" placeholder="Message / الرسالة" required></textarea>
+        <input type="text"  name="name"    placeholder="Name / الاسم"         required>
+        <input type="email" name="email"   placeholder="Email / البريد الإلكتروني" required>
+        <textarea name="message" rows="4"  placeholder="Message / الرسالة"     required></textarea>
         <button type="submit" data-en="Send" data-ar="إرسال">Send</button>
       </form>
       <div class="social">
@@ -160,4 +183,4 @@
   <!-- Main JS -->
   <script src="js/script.js" defer></script>
 </body>
-          </html>
+  </html>

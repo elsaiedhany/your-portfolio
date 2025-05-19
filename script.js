@@ -1,272 +1,304 @@
+// --- Global Translations Object ---
 const translations = {
     en: {
-        metaTitle: "Site Management",
-        navBrandSiteName: "Your Site Name",
-        navLinkHome: "Home/Link Management",
-        navLinkAbout: "About Me",
-        pageTitleCard: "Add New Website",
-        urlLabel: "Enter Website URL:",
-        submitButton: "Add Website",
-        footerNote: "Backend integration active.",
-        htmlLang: "en",
-        bodyDir: "ltr",
-        formPlaceholder: "https://www.example.com",
-        footerOwnerName: "Said Hany",
-        submittedSitesTitle: "Saved Sites",
-        loadingText: "Loading sites...",
-        noSitesText: "No sites saved yet.",
-        refreshButtonText: "Refresh List",
-        alerts: { /* ... نفس تنبيهات الردود من الخادم ... */
-            urlRequired: "Please enter the website URL.",
-            urlInvalid: "Please enter a valid URL (e.g., https://www.example.com).",
-            urlAdded: "Site added successfully!",
-            errorAddingUrl: "Error adding URL. Please try again.",
-            networkError: "Network error. Please check your connection or backend server.",
-            noUrlProvidedBackend: "No URL provided to the server.",
-            urlEmptyBackend: "URL cannot be empty (checked by server).",
-            invalidUrlFormatBackend: "Invalid URL format. Must start with http:// or https:// (checked by server).",
-            internalErrorBackend: "An internal server error occurred. Please try again.",
-            errorFetchingSites: "Error fetching sites."
-        }
+        metaTitle: "Project Dashboard - Said Hany",
+        navBrandSiteName: "Said Hany | Project Panel",
+        navLinkHome: "<i class=\"fas fa-tasks me-1\"></i>Project Management",
+        navLinkAbout: "<i class=\"fas fa-user-circle me-1\"></i>About Me",
+        formTitle: "<i class=\"fas fa-plus-circle me-2\"></i>Add New Project",
+        labelProjectName: "Project Name:",
+        labelProjectUrl: "Project URL:",
+        labelProjectDescription: "Project Description:",
+        submitProjectButton: "<i class=\"fas fa-paper-plane me-2\"></i>Add Project",
+        savedProjectsTitle: "<i class=\"fas fa-briefcase me-2\"></i>Saved Projects",
+        loadingProjectsText: "Loading projects, please wait...",
+        noProjectsText: "<i class=\"fas fa-folder-open me-2\"></i>No projects saved yet. Add your first masterpiece!",
+        refreshProjectsBtnText: "<i class=\"fas fa-sync-alt me-1\"></i>Refresh List",
+        visitProjectBtnText: "<i class=\"fas fa-external-link-alt me-1\"></i>Visit Project",
+        footerText: `&copy; ${new Date().getFullYear()} Said Hany. All rights reserved. <br class="d-block d-sm-none"> Designed with <i class="fas fa-heart text-danger"></i>`,
+        // Alerts & Messages
+        alertProjectAdded: "Project added successfully! It's now in your list.",
+        alertErrorAdding: "Oops! Error adding project. Please check your input or server.",
+        alertNetworkError: "Network Error! Please check your internet connection or if the backend server is running.",
+        alertFieldsRequired: "Hold on! Project Name, URL, and Description are all required.",
+        alertInvalidUrl: "Hmm, that URL doesn't look right. Please use a valid format (http:// or https://).",
+        alertErrorFetching: "Could not fetch projects. The server might be resting!",
+        addingProjectInProgress: "<i class=\"fas fa-spinner fa-spin me-2\"></i>Adding Project..."
     },
     ar: {
-        metaTitle: "إدارة المواقع",
-        navBrandSiteName: "اسم موقعك",
-        navLinkHome: "الرئيسية/إدارة الروابط",
-        navLinkAbout: "عني",
-        pageTitleCard: "إضافة موقع جديد",
-        urlLabel: "أدخل رابط الموقع الإلكتروني:",
-        submitButton: "إضافة الموقع",
-        footerNote: "تم تفعيل الربط مع الخادم.",
-        htmlLang: "ar",
-        bodyDir: "rtl",
-        formPlaceholder: "https://www.example.com",
-        footerOwnerName: "سعيد هاني",
-        submittedSitesTitle: "المواقع المحفوظة",
-        loadingText: "جاري تحميل المواقع...",
-        noSitesText: "لا توجد مواقع محفوظة حتى الآن.",
-        refreshButtonText: "تحديث القائمة",
-        alerts: { /* ... نفس تنبيهات الردود من الخادم ... */
-            urlRequired: "الرجاء إدخال رابط الموقع.",
-            urlInvalid: "الرجاء إدخال رابط صحيح (مثال: https://www.example.com).",
-            urlAdded: "تمت إضافة الموقع بنجاح!",
-            errorAddingUrl: "خطأ في إضافة الرابط. الرجاء المحاولة مرة أخرى.",
-            networkError: "خطأ في الشبكة. يرجى التحقق من اتصالك أو من الخادم الخلفي.",
-            noUrlProvidedBackend: "لم يتم توفير رابط للخادم.",
-            urlEmptyBackend: "لا يمكن أن يكون الرابط فارغًا (تم التحقق بواسطة الخادم).",
-            invalidUrlFormatBackend: "تنسيق الرابط غير صالح. يجب أن يبدأ بـ http:// أو https:// (تم التحقق بواسطة الخادم).",
-            internalErrorBackend: "حدث خطأ داخلي في الخادم. الرجاء المحاولة مرة أخرى.",
-            errorFetchingSites: "خطأ في جلب المواقع."
-        }
+        metaTitle: "لوحة تحكم المشاريع - سعيد هاني",
+        navBrandSiteName: "<i class=\"fas fa-rocket me-2\"></i>سعيد هاني | لوحة المشاريع",
+        navLinkHome: "<i class=\"fas fa-tasks me-1\"></i>إدارة المشاريع",
+        navLinkAbout: "<i class=\"fas fa-user-circle me-1\"></i>عني",
+        formTitle: "<i class=\"fas fa-plus-circle me-2\"></i>إضافة مشروع جديد",
+        labelProjectName: "اسم المشروع:",
+        labelProjectUrl: "رابط المشروع (URL):",
+        labelProjectDescription: "وصف المشروع:",
+        submitProjectButton: "<i class=\"fas fa-paper-plane me-2\"></i>إضافة المشروع",
+        savedProjectsTitle: "<i class=\"fas fa-briefcase me-2\"></i>المشاريع المحفوظة",
+        loadingProjectsText: "جاري تحميل المشاريع، يرجى الانتظار...",
+        noProjectsText: "<i class=\"fas fa-folder-open me-2\"></i>لا توجد مشاريع محفوظة حتى الآن. قم بإضافة تحفتك الأولى!",
+        refreshProjectsBtnText: "<i class=\"fas fa-sync-alt me-1\"></i>تحديث القائمة",
+        visitProjectBtnText: "<i class=\"fas fa-external-link-alt me-1\"></i>زيارة المشروع",
+        footerText: `&copy; ${new Date().getFullYear()} سعيد هاني. كل الحقوق محفوظة. <br class="d-block d-sm-none"> تم التصميم بحب <i class="fas fa-heart text-danger"></i>`,
+        // Alerts & Messages
+        alertProjectAdded: "تمت إضافة المشروع بنجاح! أصبح الآن في قائمتك.",
+        alertErrorAdding: "عفوًا! خطأ في إضافة المشروع. يرجى التحقق من مدخلاتك أو الخادم.",
+        alertNetworkError: "خطأ في الشبكة! يرجى التحقق من اتصالك بالإنترنت أو من أن الخادم الخلفي يعمل.",
+        alertFieldsRequired: "لحظة من فضلك! اسم المشروع، الرابط، والوصف كلها مطلوبة.",
+        alertInvalidUrl: "هممم، هذا الرابط لا يبدو صحيحًا. يرجى استخدام تنسيق صالح (http:// أو https://).",
+        alertErrorFetching: "تعذر جلب المشاريع. قد يكون الخادم في استراحة!",
+        addingProjectInProgress: "<i class=\"fas fa-spinner fa-spin me-2\"></i>جاري الإضافة..."
     }
 };
 
-// --- DOM Elements ---
-const responseMessageDiv = document.getElementById('responseMessage');
-const siteForm = document.getElementById('siteForm');
-const websiteUrlInput = document.getElementById('websiteUrl');
-const submitButton = document.getElementById('submitButton');
+// --- DOM Elements Cache ---
+const domElements = {
+    metaTitle: document.getElementById('metaTitle'),
+    navBrandSiteName: document.getElementById('navBrandSiteName'),
+    navLinkHome: document.getElementById('navLinkHome'),
+    navLinkAbout: document.getElementById('navLinkAbout'),
+    formTitle: document.getElementById('formTitle'),
+    labelProjectName: document.getElementById('labelProjectName'),
+    labelProjectUrl: document.getElementById('labelProjectUrl'),
+    labelProjectDescription: document.getElementById('labelProjectDescription'),
+    submitProjectButton: document.getElementById('submitProjectButton'),
+    savedProjectsTitle: document.getElementById('savedProjectsTitle'),
+    loadingProjectsText: document.getElementById('loadingProjectsText'),
+    noProjectsText: document.getElementById('noProjectsText'),
+    refreshProjectsBtnText: document.getElementById('refreshProjectsBtnText'),
+    footerText: document.getElementById('footerText'),
+    
+    projectForm: document.getElementById('projectForm'),
+    projectNameInput: document.getElementById('projectName'),
+    projectUrlInput: document.getElementById('projectUrl'),
+    projectDescriptionInput: document.getElementById('projectDescription'),
+    addProjectResponseMessage: document.getElementById('addProjectResponseMessage'),
+    
+    projectsListContainer: document.getElementById('projectsListContainer'),
+    loadingProjectsMessage: document.getElementById('loadingProjectsMessage'),
+    noProjectsMessage: document.getElementById('noProjectsMessage'),
+    refreshProjectsButton: document.getElementById('refreshProjectsButton'),
 
-// --- عناصر خاصة بعرض الروابط ---
-const sitesListContainer = document.getElementById('sitesListContainer');
-const loadingSitesMessage = document.getElementById('loadingSitesMessage');
-const noSitesMessage = document.getElementById('noSitesMessage');
-const refreshSitesButton = document.getElementById('refreshSitesButton');
+    langBtnAr: document.getElementById('langBtnAr'),
+    langBtnEn: document.getElementById('langBtnEn'),
+};
 
+// --- Global State ---
+let currentLanguage = 'ar'; // Default language
+const BACKEND_BASE_URL = 'http://127.0.0.1:5000'; // تأكد من تعديل هذا إذا كان IP موبايلك مختلفًا عند الاختبار
 
-// --- Functions ---
+// --- Utility Functions ---
+function updateTextContent(element, text) {
+    if (element) {
+        element.innerHTML = text; // Use innerHTML to render icons within text
+    }
+}
+
 function setLanguage(lang) {
-    const currentTranslations = translations[lang];
-    document.documentElement.lang = currentTranslations.htmlLang;
-    document.body.dir = currentTranslations.bodyDir;
-    document.body.classList.toggle('rtl', currentTranslations.bodyDir === 'rtl');
+    currentLanguage = lang;
+    const trans = translations[lang];
 
-    // تحديث نصوص الترجمة العامة
-    const elementsToTranslate = {
-        'metaTitle': currentTranslations.metaTitle,
-        'navBrandSiteName': currentTranslations.navBrandSiteName,
-        'navLinkHome': currentTranslations.navLinkHome,
-        'navLinkAbout': currentTranslations.navLinkAbout,
-        'pageTitleCard': currentTranslations.pageTitleCard,
-        'urlLabel': currentTranslations.urlLabel,
-        'submitButton': currentTranslations.submitButton,
-        'footerNote': currentTranslations.footerNote,
-        'footerOwnerName': currentTranslations.footerOwnerName,
-        'submittedSitesTitle': currentTranslations.submittedSitesTitle,
-        'loadingText': currentTranslations.loadingText,
-        'noSitesText': currentTranslations.noSitesText,
-        'refreshButtonText': currentTranslations.refreshButtonText
-    };
+    document.documentElement.lang = lang;
+    document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.body.classList.toggle('rtl', lang === 'ar');
 
-    for (const id in elementsToTranslate) {
-        const element = document.getElementById(id);
-        if (element) {
-            element.textContent = elementsToTranslate[id];
+    // Update all static texts
+    for (const key in domElements) {
+        if (trans[key] && domElements[key]) {
+            updateTextContent(domElements[key], trans[key]);
         }
     }
     
-    if(websiteUrlInput) websiteUrlInput.placeholder = currentTranslations.formPlaceholder;
-    
-    const yearSpan = document.getElementById('currentYear');
-    if (yearSpan) yearSpan.textContent = new Date().getFullYear();
+    // Update placeholders
+    if (domElements.projectNameInput) domElements.projectNameInput.placeholder = lang === 'ar' ? "مثال: موقع شخصي متكامل" : "e.g., Full Personal Portfolio";
+    if (domElements.projectUrlInput) domElements.projectUrlInput.placeholder = "https://example.com";
+    if (domElements.projectDescriptionInput) domElements.projectDescriptionInput.placeholder = lang === 'ar' ? "اكتب وصفًا موجزًا للمشروع وأهم التقنيات المستخدمة..." : "Write a brief description of the project and key technologies used...";
+
+    // Update active language button style
+    if (domElements.langBtnAr && domElements.langBtnEn) {
+        domElements.langBtnAr.classList.toggle('active-lang', lang === 'ar');
+        domElements.langBtnEn.classList.toggle('active-lang', lang === 'en');
+    }
     
     localStorage.setItem('preferredLanguage', lang);
-    fetchAndDisplaySites(); // إعادة تحميل وعرض المواقع باللغة الجديدة (خاصة لرسالة "لا توجد مواقع")
+    fetchAndDisplayProjects(); // Refresh project list with new language for messages
 }
 
-function displayResponseMessage(message, type) {
-    if (responseMessageDiv) {
-        responseMessageDiv.textContent = message;
-        responseMessageDiv.className = 'mb-3'; 
-        responseMessageDiv.classList.add(type); 
+function displayResponseMessage(element, message, type) {
+    if (element) {
+        element.innerHTML = message; // Use innerHTML for potential icons in messages
+        element.className = 'mb-3 alert'; // Base classes
+        element.classList.add(type === 'success' ? 'alert-success' : 'alert-danger');
+        element.style.display = 'block';
         
         if (type === 'success') {
             setTimeout(() => {
-                if(responseMessageDiv) { // تحقق مرة أخرى قبل المسح
-                    responseMessageDiv.textContent = '';
-                    responseMessageDiv.className = 'mb-3';
+                if (element) {
+                    element.style.display = 'none';
+                    element.innerHTML = '';
+                    element.className = 'mb-3';
                 }
-            }, 5000); 
+            }, 4000);
         }
     }
 }
 
-async function handleFormSubmit(event) {
+// --- Core Application Logic ---
+async function handleAddProjectSubmit(event) {
     event.preventDefault();
-    const url = websiteUrlInput.value.trim();
-    const currentLang = document.documentElement.lang || 'en';
-    const alerts = translations[currentLang].alerts;
+    const trans = translations[currentLanguage];
 
-    if (responseMessageDiv) {
-        responseMessageDiv.textContent = '';
-        responseMessageDiv.className = 'mb-3';
+    const projectName = domElements.projectNameInput.value.trim();
+    const projectUrl = domElements.projectUrlInput.value.trim();
+    const projectDescription = domElements.projectDescriptionInput.value.trim();
+
+    if (domElements.addProjectResponseMessage) {
+        domElements.addProjectResponseMessage.style.display = 'none';
     }
 
-    if (!url) {
-        displayResponseMessage(alerts.urlRequired, 'error');
-        websiteUrlInput.focus();
+    if (!projectName || !projectUrl || !projectDescription) {
+        displayResponseMessage(domElements.addProjectResponseMessage, trans.alerts.alertFieldsRequired, 'error');
         return;
     }
     try {
-        new URL(url); // Basic validation
-        if (!['http:', 'https:'].includes(new URL(url).protocol)) {
+        new URL(projectUrl);
+        if (!['http:', 'https:'].includes(new URL(projectUrl).protocol)) {
              throw new Error('Invalid protocol');
         }
     } catch (_) {
-        displayResponseMessage(alerts.urlInvalid, 'error');
-        websiteUrlInput.focus();
+        displayResponseMessage(domElements.addProjectResponseMessage, trans.alerts.alertInvalidUrl, 'error');
         return;
     }
 
-    submitButton.disabled = true;
-    submitButton.textContent = currentLang === 'ar' ? 'جاري الإضافة...' : 'Adding...';
+    domElements.submitProjectButton.disabled = true;
+    updateTextContent(domElements.submitProjectButton, trans.addingProjectInProgress);
 
     try {
-        const backendUrl = 'http://127.0.0.1:5000/add-site';
-        const response = await fetch(backendUrl, {
+        const response = await fetch(`${BACKEND_BASE_URL}/add-project`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ websiteUrl: url }),
+            body: JSON.stringify({ projectName, projectUrl, projectDescription }),
         });
         const result = await response.json();
 
         if (response.ok && result.status === "success") {
-            displayResponseMessage(alerts.urlAdded, 'success');
-            if(siteForm) siteForm.reset(); 
-            fetchAndDisplaySites(); // تحديث قائمة المواقع بعد الإضافة الناجحة
+            displayResponseMessage(domElements.addProjectResponseMessage, trans.alerts.alertProjectAdded, 'success');
+            if(domElements.projectForm) domElements.projectForm.reset(); 
+            fetchAndDisplayProjects();
         } else {
-            // ... (نفس معالجة أخطاء الخادم من قبل) ...
-            let backendMessage = result.message || alerts.errorAddingUrl;
-            if (result.message === "No URL provided") backendMessage = alerts.noUrlProvidedBackend;
-            else if (result.message === "URL cannot be empty") backendMessage = alerts.urlEmptyBackend;
-            else if (result.message === "Invalid URL format. Must start with http:// or https://") backendMessage = alerts.invalidUrlFormatBackend;
-            else if (result.message === "An internal error occurred. Please try again.") backendMessage = alerts.internalErrorBackend;
-            displayResponseMessage(backendMessage, 'error');
+            displayResponseMessage(domElements.addProjectResponseMessage, result.message || trans.alerts.alertErrorAdding, 'error');
         }
     } catch (error) {
-        console.error('Fetch Error (Add Site):', error);
-        displayResponseMessage(alerts.networkError, 'error');
+        console.error('Fetch Error (Add Project):', error);
+        displayResponseMessage(domElements.addProjectResponseMessage, trans.alerts.alertNetworkError, 'error');
     } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = translations[currentLang].submitButton;
+        domElements.submitProjectButton.disabled = false;
+        updateTextContent(domElements.submitProjectButton, trans.submitProjectButton);
     }
 }
 
-// --- وظيفة جديدة لجلب وعرض المواقع ---
-async function fetchAndDisplaySites() {
-    if (!sitesListContainer || !loadingSitesMessage || !noSitesMessage) return; // تأكد من وجود العناصر في الصفحة الحالية
+function createProjectCard(project) {
+    const trans = translations[currentLanguage];
+    const col = document.createElement('div');
+    col.className = 'col project-card-item'; // Added a class for potential animation
 
-    const currentLang = document.documentElement.lang || 'en';
-    const alerts = translations[currentLang].alerts;
+    const card = document.createElement('div');
+    card.className = 'card project-card h-100';
 
-    loadingSitesMessage.style.display = 'block';
-    noSitesMessage.style.display = 'none';
-    sitesListContainer.innerHTML = ''; // مسح القائمة القديمة
+    const cardHeader = document.createElement('div');
+    cardHeader.className = 'card-header project-card-header';
+    const cardTitle = document.createElement('h5');
+    cardTitle.className = 'card-title mb-0';
+    cardTitle.textContent = project.name;
+    cardHeader.appendChild(cardTitle);
+
+    const cardBody = document.createElement('div');
+    cardBody.className = 'card-body';
+    const cardText = document.createElement('p');
+    cardText.className = 'card-text project-description';
+    cardText.textContent = project.description;
+    cardBody.appendChild(cardText);
+
+    const cardFooter = document.createElement('div');
+    cardFooter.className = 'card-footer project-card-footer';
+    const visitLink = document.createElement('a');
+    visitLink.href = project.url;
+    visitLink.className = 'btn btn-visit-project btn-sm';
+    visitLink.target = '_blank';
+    visitLink.rel = 'noopener noreferrer';
+    updateTextContent(visitLink, trans.visitProjectBtnText); // Use innerHTML for icon
+    cardFooter.appendChild(visitLink);
+
+    card.appendChild(cardHeader);
+    card.appendChild(cardBody);
+    card.appendChild(cardFooter);
+    col.appendChild(card);
+    return col;
+}
+
+async function fetchAndDisplayProjects() {
+    if (!domElements.projectsListContainer || !domElements.loadingProjectsMessage || !domElements.noProjectsMessage) return;
+
+    const trans = translations[currentLanguage];
+    domElements.loadingProjectsMessage.style.display = 'block';
+    domElements.noProjectsMessage.style.display = 'none';
+    domElements.projectsListContainer.innerHTML = '';
 
     try {
-        const backendUrl = 'http://127.0.0.1:5000/get-sites';
-        const response = await fetch(backendUrl);
+        const response = await fetch(`${BACKEND_BASE_URL}/get-projects`);
         const result = await response.json();
 
         if (response.ok && result.status === "success") {
-            if (result.sites && result.sites.length > 0) {
-                result.sites.forEach(siteUrl => {
-                    const listItem = document.createElement('li');
-                    listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
-                    
-                    const link = document.createElement('a');
-                    link.href = siteUrl;
-                    link.textContent = siteUrl;
-                    link.target = '_blank'; // لفتح الرابط في نافذة جديدة
-                    link.rel = 'noopener noreferrer';
-                    
-                    listItem.appendChild(link);
-                    sitesListContainer.appendChild(listItem);
+            if (result.projects && result.projects.length > 0) {
+                result.projects.forEach((project, index) => {
+                    const projectCardElement = createProjectCard(project);
+                    domElements.projectsListContainer.appendChild(projectCardElement);
+                    // Creative touch: Staggered fade-in animation for cards
+                    setTimeout(() => {
+                        projectCardElement.style.opacity = '1';
+                        projectCardElement.style.transform = 'translateY(0)';
+                    }, index * 100); // Delay each card slightly
                 });
             } else {
-                noSitesMessage.style.display = 'block';
-                noSitesMessage.textContent = alerts.noSitesText; // استخدام النص المترجم
+                domElements.noProjectsMessage.style.display = 'block';
+                updateTextContent(domElements.noProjectsMessage, trans.noProjectsText);
             }
         } else {
-            displayResponseMessage(result.message || alerts.errorFetchingSites, 'error');
-             noSitesMessage.style.display = 'block';
-             noSitesMessage.textContent = alerts.errorFetchingSites;
+            updateTextContent(domElements.noProjectsMessage, result.message || trans.alerts.alertErrorFetching);
+            domElements.noProjectsMessage.style.display = 'block';
         }
     } catch (error) {
-        console.error('Fetch Error (Get Sites):', error);
-        displayResponseMessage(alerts.networkError, 'error'); // استخدام نفس رسالة الخطأ العامة
-        noSitesMessage.style.display = 'block';
-        noSitesMessage.textContent = alerts.networkError;
+        console.error('Fetch Error (Get Projects):', error);
+        updateTextContent(domElements.noProjectsMessage, trans.alerts.alertNetworkError);
+        domElements.noProjectsMessage.style.display = 'block';
     } finally {
-        loadingSitesMessage.style.display = 'none';
+        domElements.loadingProjectsMessage.style.display = 'none';
     }
 }
 
-
-// --- Event Listeners ---
-if (siteForm) {
-    siteForm.addEventListener('submit', handleFormSubmit);
-}
-if (refreshSitesButton) {
-    refreshSitesButton.addEventListener('click', fetchAndDisplaySites);
-}
-
+// --- Initializations & Event Listeners ---
 document.addEventListener('DOMContentLoaded', () => {
-    let preferredLanguage = localStorage.getItem('preferredLanguage');
-    if (!preferredLanguage) {
-        preferredLanguage = navigator.language.toLowerCase().startsWith('ar') ? 'ar' : 'en';
-    }
-    // تطبيق اللغة على كل الصفحات التي قد تحتوي على عناصر تحتاج لترجمة
-    setLanguage(preferredLanguage); 
+    // Initialize language
+    const preferredLanguage = localStorage.getItem('preferredLanguage') || (navigator.language.toLowerCase().startsWith('ar') ? 'ar' : 'en');
+    setLanguage(preferredLanguage); // This will also call fetchAndDisplayProjects
 
-    // جلب المواقع فقط إذا كنا في صفحة index.html (حيث توجد قائمة المواقع)
-    if (document.getElementById('sitesListContainer')) {
-        fetchAndDisplaySites();
+    // Attach event listeners only if the elements exist (i.e., on the correct page)
+    if (domElements.projectForm) {
+        domElements.projectForm.addEventListener('submit', handleAddProjectSubmit);
     }
-    
-    const yearSpanFooter = document.getElementById('currentYear'); // للفوتر العام
-    if(yearSpanFooter) yearSpanFooter.textContent = new Date().getFullYear();
+    if (domElements.refreshProjectsButton) {
+        domElements.refreshProjectsButton.addEventListener('click', fetchAndDisplayProjects);
+    }
+    if (domElements.langBtnAr) {
+        domElements.langBtnAr.addEventListener('click', () => setLanguage('ar'));
+    }
+    if (domElements.langBtnEn) {
+        domElements.langBtnEn.addEventListener('click', () => setLanguage('en'));
+    }
 
-    const yearSpanAbout = document.getElementById('currentYearAboutPage'); // للفوتر في about.html
-    if(yearSpanAbout) yearSpanAbout.textContent = new Date().getFullYear();
+    // Footer current year (could be part of setLanguage if footer is translated)
+    // const currentYearSpan = document.getElementById('currentYear'); // Already in setLanguage via footerText
+    // if (currentYearSpan) currentYearSpan.textContent = new Date().getFullYear();
 });
+

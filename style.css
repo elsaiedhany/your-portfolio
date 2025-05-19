@@ -309,3 +309,9 @@ body.rtl .nav-link i {
 #noProjectsMessage, #loadingProjectsMessage {
     font-family: var(--font-family-body);
 }
+/* --- Project Card Animation --- */
+.project-card-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}

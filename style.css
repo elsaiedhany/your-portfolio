@@ -1,40 +1,39 @@
 /* --- Base and Typography --- */
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #F4F7F6; /* لون خلفية ناعم ومختلف */
-    color: #333A40; /* لون نص أساسي داكن قليلاً */
+    background-color: #F4F7F6;
+    color: #333A40;
     line-height: 1.7;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s ease; /* انتقال ناعم لتغييرات محتملة */
+    transition: background-color 0.3s ease;
 }
 
 body.rtl {
     direction: rtl;
-    font-family: 'El Messiri', serif; /* خط عربي مميز للجسم عند تفعيل RTL */
+    font-family: 'El Messiri', serif;
 }
 
 /* --- Navbar --- */
 .navbar {
-    background-color: #FFFFFF; /* خلفية بيضاء للشريط العلوي */
+    background-color: #FFFFFF;
     padding: 1rem 1.5rem;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08); /* ظل ناعم للشريط */
-    border-bottom: 3px solid #4A90E2; /* شريط سفلي بلون مميز */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    border-bottom: 3px solid #4A90E2;
 }
 
 .navbar-brand {
-    font-family: 'El Messiri', serif; /* خط مميز لاسم الموقع/العلامة التجارية */
+    font-family: 'El Messiri', serif;
     font-size: 1.9em;
     font-weight: 700;
-    color: #4A90E2 !important; /* لون العلامة التجارية */
+    color: #4A90E2 !important;
 }
 body.rtl .navbar-brand {
     font-family: 'El Messiri', serif;
 }
 
-
 .lang-switch .btn-lang {
-    font-family: 'Open Sans', sans-serif; /* خط الأزرار ليكون متناسقًا مع الإنجليزية */
+    font-family: 'Open Sans', sans-serif;
     background-color: transparent;
     color: #4A90E2;
     border: 1px solid #4A90E2;
@@ -46,7 +45,7 @@ body.rtl .navbar-brand {
     transition: all 0.3s ease;
 }
 body.rtl .lang-switch .btn-lang {
-     font-family: 'El Messiri', serif; /* خط عربي لأزرار اللغة */
+     font-family: 'El Messiri', serif;
 }
 
 .lang-switch .btn-lang:hover, .lang-switch .btn-lang:focus {
@@ -57,44 +56,44 @@ body.rtl .lang-switch .btn-lang {
 
 /* --- Content Wrapper --- */
 .content-wrapper {
-    min-height: calc(100vh - 150px); /* للمساعدة في دفع الفوتر للأسفل إن وجد */
+    min-height: calc(100vh - 150px);
 }
 
 /* --- Card Customization --- */
 .card.shadow-custom {
     background-color: #FFFFFF;
     border: none;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1); /* ظل أعمق وأكثر وضوحًا */
-    border-radius: 12px; /* حواف دائرية أكثر */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
     margin-top: 2rem;
-    overflow: hidden; /* لضمان احتواء العناصر الداخلية بشكل جيد */
+    overflow: hidden;
 }
 
 .card-header {
-    background-color: #4A90E2; /* لون رأس البطاقة متناسق مع العلامة التجارية */
+    background-color: #4A90E2;
     color: white;
     padding: 1.25rem 1.5rem;
-    border-bottom: none; /* إزالة الخط السفلي الافتراضي */
+    border-bottom: none;
 }
 
 .card-header .card-title {
     margin: 0;
     font-size: 1.6em;
-    font-weight: 700; /* استخدام الخط الأثقل من El Messiri */
-    font-family: 'El Messiri', serif; /* للتأكيد على استخدام الخط المميز هنا */
+    font-weight: 700;
+    font-family: 'El Messiri', serif;
 }
 body.rtl .card-header .card-title {
     font-family: 'El Messiri', serif;
 }
 
 .card-body {
-    padding: 2rem 2.5rem; /* زيادة الحشو الداخلي للبطاقة */
+    padding: 2rem 2.5rem;
 }
 
 /* --- Form Elements --- */
 .form-label {
-    font-weight: 600; /* خط أعرض للـ label */
-    margin-bottom: 0.75rem; /* زيادة المسافة السفلية */
+    font-weight: 600;
+    margin-bottom: 0.75rem;
     color: #333A40;
     font-size: 1.05em;
 }
@@ -102,30 +101,29 @@ body.rtl .form-label {
     font-family: 'El Messiri', serif;
 }
 
-
 .form-control {
-    border-radius: 8px; /* حواف دائرية معتدلة */
+    border-radius: 8px;
     border: 1px solid #CED4DA;
-    padding: 0.85rem 1rem; /* زيادة الحشو الداخلي لحقل الإدخال */
+    padding: 0.85rem 1rem;
     font-size: 1rem;
     transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 body.rtl .form-control {
-    font-family: 'Open Sans', sans-serif; /* قد ترغب في خط مختلف للحقول إذا كان El Messiri لا يناسب الإدخال */
+    font-family: 'Open Sans', sans-serif;
 }
 body.rtl .form-control::placeholder {
   text-align: right;
-  font-family: 'El Messiri', serif; /* خط عربي للـ placeholder */
+  font-family: 'El Messiri', serif;
 }
 .form-control:focus {
     border-color: #4A90E2;
-    box-shadow: 0 0 0 0.25rem rgba(74, 144, 226, 0.3); /* ظل عند التركيز */
-    background-color: #fff; /* ضمان بقاء الخلفية بيضاء عند التركيز */
+    box-shadow: 0 0 0 0.25rem rgba(74, 144, 226, 0.3);
+    background-color: #fff;
 }
 
 /* --- Custom Submit Button --- */
 .btn-submit-custom {
-    background-color: #28A745; /* لون أخضر مميز للزر الأساسي */
+    background-color: #28A745;
     border-color: #28A745;
     color: white;
     padding: 0.85rem 1.5rem;
@@ -141,7 +139,7 @@ body.rtl .btn-submit-custom {
 }
 
 .btn-submit-custom:hover, .btn-submit-custom:focus {
-    background-color: #218838; /* لون أغمق عند المرور/التركيز */
+    background-color: #218838;
     border-color: #1e7e34;
     color: white;
     box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
@@ -150,9 +148,30 @@ body.rtl .btn-submit-custom {
 /* --- Footer Note --- */
 #footerNote {
     font-size: 0.95em;
-    color: #6c757d; /* لون رمادي معتدل */
+    color: #6c757d;
     padding: 1rem 0;
 }
 body.rtl #footerNote {
     font-family: 'El Messiri', serif;
+}
+
+/* --- Response Messages Styling --- */
+#responseMessage {
+    font-size: 0.9em;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    text-align: center;
+    min-height: 24px; /* To prevent layout shift when empty */
+}
+#responseMessage.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+#responseMessage.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
 }

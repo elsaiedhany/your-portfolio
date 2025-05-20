@@ -10,8 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&family=El+Messiri:wght@400;500;600;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css"> </head>
-<body data-bs-theme="light"> <nav class="navbar navbar-expand-lg fixed-top main-navbar scrolled-navbar shadow-sm"> <div class="container">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-bs-theme="light">
+
+    <nav class="navbar navbar-expand-lg fixed-top main-navbar scrolled-navbar shadow-sm"> <div class="container">
             <a class="navbar-brand fw-bold" href="index.html" id="navBrandSiteNameAbout">
                 <span class="brand-icon"><i class="fas fa-meteor"></i></span> سعيد هاني
             </a>
@@ -32,9 +35,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html#contact-section" id="navLinkContactAbout"><i class="fas fa-envelope-open-text me-1"></i>تواصل</a>
                     </li>
-                     <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
-                        <button class="btn btn-sm btn-lang-switcher me-2" id="langBtnAr">AR</button>
-                        <button class="btn btn-sm btn-lang-switcher" id="langBtnEn">EN</button>
+                    <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0 language-selector-container">
+                        <button class="btn btn-sm btn-lang-switcher-icon" onclick="applyGlobalTranslations('ar')" id="langBtnArPage" title="العربية">
+                            <i class="fi fi-eg"></i> </button>
+                        <button class="btn btn-sm btn-lang-switcher-icon" onclick="applyGlobalTranslations('en')" id="langBtnEnPage" title="English">
+                            <i class="fi fi-gb"></i> </button>
                     </li>
                 </ul>
             </div>
@@ -51,8 +56,11 @@
                     <div class="card about-card p-4 p-md-5 shadow-lg">
                         <div class="row g-0 g-md-5 align-items-center">
                             <div class="col-md-4 text-center mb-4 mb-md-0">
-                                <div class="profile-image-placeholder rounded-circle shadow-lg mx-auto d-flex align-items-center justify-content-center overflow-hidden">
-                                    <i class="fas fa-user-tie fa-6x text-muted-custom"></i>
+                                <div class="profile-image-container mx-auto shadow-lg">
+                                    <img src="assets/images/said_hany_profile.jpg" alt="سعيد هاني - مطور ويب" class="img-fluid profile-actual-image" onerror="this.style.display='none'; document.getElementById('profileIconPlaceholder').style.display='flex';">
+                                    <div id="profileIconPlaceholder" class="profile-image-placeholder-icon" style="display: none;">
+                                        <i class="fas fa-user-tie fa-6x text-muted-custom"></i>
+                                    </div>
                                 </div>
                                 <h2 class="mt-4 mb-1 h4 fw-bold" id="aboutNameCard">سعيد هاني</h2>
                                 <p class="text-muted-custom mb-0" id="aboutTaglineCard">مطور ويب ومصمم واجهات طموح</p>
@@ -60,71 +68,35 @@
                             <div class="col-md-8">
                                 <h3 class="section-subtitle mb-3 fw-bold" id="whoAmITitle"><i class="fas fa-user-secret me-2 text-secondary"></i>من أنا؟</h3>
                                 <p class="lead fs-5" id="aboutIntro">
-                                    أهلاً بكم في صفحتي! أنا سعيد هاني، مطور ويب مصري شغوف بكل ما هو جديد في عالم التقنية. أركز حاليًا على تعميق خبراتي في تطوير الواجهات الأمامية (Frontend) باستخدام أحدث الأدوات والتقنيات، بالإضافة إلى بناء أساس قوي في تطوير الواجهات الخلفية (Backend).
+                                    أهلاً بكم! أنا سعيد هاني، مطور ويب مصري شغوف بكل ما هو جديد في عالم التقنية. أركز حاليًا على تعميق خبراتي في تطوير الواجهات الأمامية (Frontend) باستخدام أحدث الأدوات والتقنيات، بالإضافة إلى بناء أساس قوي في تطوير الواجهات الخلفية (Backend).
                                 </p>
                                 <p class="fs-6" id="aboutAmbition">
-                                    أسعى دائمًا لتحويل الأفكار المبتكرة إلى مشاريع ويب عملية وتفاعلية تضيف قيمة للمستخدم. أؤمن بأن التعلم المستمر، الشغف بالتفاصيل، والسعي نحو الإتقان هي مفاتيح النجاح في هذا المجال المتجدد باستمرار. هذه الرحلة في تطوير الويب بالنسبة لي ليست مجرد وظيفة، بل هي شغف ومتعة في بناء الأشياء من الصفر ورؤيتها تنبض بالحياة.
+                                    أسعى دائمًا لتحويل الأفكار المبتكرة إلى مشاريع ويب عملية وتفاعلية تضيف قيمة للمستخدم. أؤمن بأن التعلم المستمر، الشغف بالتفاصيل، والسعي نحو الإتقان هي مفاتيح النجاح في هذا المجال المتجدد باستمرار.
                                 </p>
                             </div>
                         </div>
-                        
                         <hr class="my-4 my-md-5 stylish-hr-mainpage">
-                        
                         <div class="skills-subsection">
                             <h3 class="section-subtitle text-center mb-4 fw-bold" id="mySkillsTitle"><i class="fas fa-cogs me-2 text-secondary"></i>مهاراتي التقنية</h3>
                             <div class="row text-center g-3">
-                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                                    <div class="skill-item p-3 w-100">
-                                        <i class="fab fa-html5 fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillHTML">HTML5</h6>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                                    <div class="skill-item p-3 w-100">
-                                        <i class="fab fa-css3-alt fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillCSS">CSS3</h6>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                                    <div class="skill-item p-3 w-100">
-                                        <i class="fab fa-js-square fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillJS">JavaScript</h6>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                                    <div class="skill-item p-3 w-100">
-                                        <i class="fab fa-bootstrap fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillBootstrap">Bootstrap 5</h6>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                                    <div class="skill-item p-3 w-100">
-                                        <i class="fab fa-python fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillPython">Python <small class='d-block text-muted'>(مع Flask)</small></h6>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                                    <div class="skill-item p-3 w-100">
-                                        <i class="fas fa-server fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillBackend">مفاهيم Backend <small class='d-block text-muted'>(أساسيات)</small></h6>
-                                    </div>
-                                </div>
-                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                                    <div class="skill-item p-3 w-100">
-                                        <i class="fab fa-wordpress fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillWP">WordPress <small class='d-block text-muted'>(أتعلمه)</small></h6>
-                                    </div>
-                                </div>
-                                 <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                                    <div class="skill-item p-3 w-100">
-                                        <i class="fas fa-feather-alt fa-3x skill-icon mb-2"></i> <h6 class="mb-0" id="skillElementor">Elementor <small class='d-block text-muted'>(أتعلمه)</small></h6>
-                                    </div>
-                                </div>
+                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fab fa-html5 fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillHTML">HTML5</h6></div></div>
+                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fab fa-css3-alt fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillCSS">CSS3</h6></div></div>
+                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fab fa-js-square fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillJS">JavaScript</h6></div></div>
+                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fab fa-bootstrap fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillBootstrap">Bootstrap 5</h6></div></div>
+                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fab fa-python fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillPython">Python <small class='d-block text-muted-custom'>(مع Flask)</small></h6></div></div>
+                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fas fa-server fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillBackend">مفاهيم Backend <small class='d-block text-muted-custom'>(أساسيات)</small></h6></div></div>
+                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fab fa-wordpress fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillWP">WordPress <small class='d-block text-muted-custom'>(أتعلمه)</small></h6></div></div>
+                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fas fa-feather-alt fa-3x skill-icon mb-2"></i> <h6 class="mb-0" id="skillElementor">Elementor <small class='d-block text-muted-custom'>(أتعلمه)</small></h6></div></div>
                             </div>
                         </div>
-                         
                         <hr class="my-4 my-md-5 stylish-hr-mainpage">
-                         
                         <div class="contact-subsection text-center">
-                             <h3 class="section-subtitle mb-4 fw-bold" id="contactMeTitle"><i class="fas fa-comments me-2 text-secondary"></i>تواصل معي</h3>
-                             <p class="lead fs-5" id="contactPrompt">يسعدني دائمًا أن أسمع منك، سواء كان لديك استفسار، اقتراح، أو فرصة للتعاون. يمكنك التواصل معي عبر:</p>
-                             <div class="mt-4">
+                            <h3 class="section-subtitle mb-4 fw-bold" id="contactMeTitle"><i class="fas fa-comments me-2 text-secondary"></i>تواصل معي</h3>
+                            <p class="lead fs-5" id="contactPrompt">يسعدني دائمًا أن أسمع منك، سواء كان لديك استفسار، اقتراح، أو فرصة للتعاون. يمكنك التواصل معي عبر:</p>
+                            <div class="mt-4">
                                 <a href="mailto:elsaiedhany.dev@gmail.com" class="btn btn-contact-custom btn-lg mx-2 my-2 shadow-sm"><i class="fas fa-at fa-fw me-2"></i>البريد الإلكتروني</a>
                                 <a href="https://github.com/elsaiedhany" class="btn btn-contact-custom btn-lg mx-2 my-2 shadow-sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-fw me-2"></i>حسابي على GitHub</a>
-                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -134,29 +106,34 @@
 
     <footer class="site-footer-mainpage text-center py-4 mt-auto">
         <div class="container">
-            <p class="mb-0" id="footerTextAbout">&copy; <span id="currentYearAboutPage"></span> <span id="footerOwnerName">سعيد هاني</span>. بناء وتصميم بشغف <i class="fas fa-heart text-dangerbeat"></i>.</p>
+            <p class="mb-0" id="footerTextAbout">&copy; <span id="currentYearAboutPage"></span> <span id="footerOwnerNameAbout">سعيد هاني</span>. بناء وتصميم بشغف <i class="fas fa-heart text-dangerbeat"></i>.</p>
         </div>
     </footer>
     
-    <a href="https://wa.me/201000000000?text=مرحباً%20سعيد،%20لدي%20استفسار%20بخصوص%20صفحة%20\"عني\"%20في%20موقعك." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="تواصل معي عبر واتساب">
+    <a href="https://wa.me/201000000000?text=مرحباً%20سعيد،%20لدي%20استفسار%20بخصوص%20موقعك." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="تواصل معي عبر واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="common-script.js"></script> <script>
+    <script src="common-script.js"></script>
+    <script>
         // Simple Intersection Observer for section animations on this page
         const animatedSectionsAbout = document.querySelectorAll('.section-animated');
-        const sectionObserverAbout = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                    observer.unobserve(entry.target);
-                }
+        if (typeof IntersectionObserver === 'function') {
+            const sectionObserverAbout = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in-up');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedSectionsAbout.forEach(section => {
+                sectionObserverAbout.observe(section);
             });
-        }, { threshold: 0.1 });
-        animatedSectionsAbout.forEach(section => {
-            sectionObserverAbout.observe(section);
-        });
+        } else { // Fallback for older browsers
+             animatedSectionsAbout.forEach(section => section.classList.add('fade-in-up'));
+        }
     </script>
 </body>
 </html>

@@ -1,32 +1,32 @@
 // common-script.js - For shared functions like language switching and global UI elements
 
+// --- START: Comprehensive Translations Object ---
 const siteTranslations = {
     en: {
         // Meta Titles
-        metaTitleHome: "Said Hany - Creative Web Developer",
-        metaTitleAboutPage: "About Me - Said Hany",
-        metaTitleDashboard: "Project Dashboard - Said Hany",
+        metaTitleHome: "Said Hany - Creative Web Developer & UI Designer",
+        metaTitleAboutPage: "About Me - Said Hany | Web Developer",
+        metaTitleDashboard: "Projects Dashboard - Said Hany (Admin)",
 
-        // Navbar (shared)
-        navBrandSiteName: "<span class='brand-icon'><i class='fas fa-meteor'></i></span> Said Hany",
+        // Navbar (shared) - Assuming same brand for all now
+        navBrandSiteName: "<span class='brand-icon'><i class='fas fa-meteor'></i></span> Said Hany", 
         navLinkHome: "<i class='fas fa-home-alt me-1'></i>Home",
         navLinkAbout: "<i class='fas fa-user-astronaut me-1'></i>About Me",
-        navLinkProjects: "<i class='fas fa-bolt me-1'></i>My Work", // For homepage link to projects section
-        navLinkContact: "<i class='fas fa-paper-plane me-1'></i>Contact", // For homepage link to contact section
+        navLinkProjects: "<i class='fas fa-bolt me-1'></i>My Work",
+        navLinkContact: "<i class='fas fa-paper-plane me-1'></i>Contact",
         
-        // Dashboard Navbar specific
-        navLinkHomeDashboard: "<i class='fas fa-arrow-left me-1'></i>Back to Main Site",
+        // Dashboard Navbar specific (ensure unique IDs if structure differs significantly)
+        navLinkHomeDashboard: "<i class='fas fa-arrow-left me-1'></i>Main Site",
         navLinkDashboard: "<i class='fas fa-edit me-1'></i>Manage Projects",
-        navLinkAboutDashboard: "<i class='fas fa-info-circle me-1'></i>About Page",
-
+        navLinkAboutDashboard: "<i class='fas fa-info-circle me-1'></i>About Page (View)",
 
         // Footer (shared) - Year will be handled by JS
-        footerText: `&copy; {year} <span id="footerOwnerName" class="fw-bold">Said Hany</span>. All rights reserved. <br class="d-block d-sm-none"> Crafted with <i class="fas fa-heart text-dangerbeat"></i>`,
-        footerOwnerName: "Said Hany", // For dynamic insertion if needed elsewhere
+        footerText: `&copy; {year} <span id="footerOwnerName" class="fw-bold">Said Hany</span>. All rights reserved. <br class="d-block d-sm-none"> Crafted with passion <i class="fas fa-heart text-dangerbeat"></i>`,
+        footerOwnerName: "Said Hany",
 
         // --- Homepage (index.html) ---
         heroTitle: "Said Hany",
-        heroSubtitle: "Creative Web Developer | Turning Complex Ideas into Elegant & Seamless Digital Experiences.",
+        heroSubtitle: "Creative Web Developer | I transform complex ideas into elegant and seamless digital experiences.",
         heroBtnAbout: "<i class='fas fa-sparkles me-2'></i>Discover More About Me",
         heroBtnProjects: "<i class='fas fa-project-diagram me-2'></i>Browse My Projects",
         aboutPreviewTitle: "<span><i class='fas fa-user-check me-2'></i>About Me Briefly</span>",
@@ -36,39 +36,38 @@ const siteTranslations = {
         projectCard1Title: "Al-Taqwa Website",
         projectCard1Desc: "My first venture into web design, a landing page focused on content and usability.",
         projectCard1Btn: "<i class='fas fa-external-link-square-alt me-1'></i>Visit Project",
-        projectCard2Title: "Creative UI Design",
+        projectCard2Title: "Creative UI Concept",
         projectCard2Desc: "An experimental project applying modern design principles to create an engaging UI.",
         projectCard2Btn: "<i class='fas fa-hourglass-start me-1'></i>In Progress",
         projectCard3Title: "Projects Dashboard",
         projectCard3Desc: "My personal tool for managing projects, built with Python (Flask) and JavaScript.",
         projectCard3Btn: "<i class='fas fa-user-shield me-1'></i>Access Panel (Private)",
-        contactSectionTitle: "<span><i class='fas fa-hands-helping me-2'></i>Let's Collaborate!</span>",
+        contactSectionTitle: "<span><i class='fas fa-bullhorn me-2'></i>Have an Idea? Let's Talk!</span>",
         contactSectionSubtext: "Have an exciting project, a collaboration idea, or just want to exchange experiences? I'm here to listen and help.",
         contactBtnEmail: "<i class='fas fa-at me-2'></i>Send Me a Message",
 
         // --- About Page (about.html) ---
-        aboutMainTitle: "<i class='fas fa-id-card me-2'></i>About Me", // Re-used ID, will be fine
+        aboutMainTitle: "<span><i class='fas fa-id-card-alt me-2'></i>Comprehensive Profile</span>",
         aboutNameCard: "Said Hany",
-        aboutTaglineCard: "Ambitious Web Developer",
-        whoAmITitle: "<i class='fas fa-question-circle me-2'></i>Who Am I?",
-        aboutIntro: "Hello! I'm Said, a passionate web developer, currently focused on honing my skills in the latest frontend and backend technologies. I always strive to learn new things and apply what I learn in practical and innovative projects.",
-        aboutAmbition: "One of my goals is to create useful web tools and applications. This project management dashboard is a step in that direction, aiming to organize my work and track my progress. I believe that continuous learning and practical application are key to evolving in this dynamic field.",
-        mySkillsTitle: "<i class='fas fa-cogs me-2'></i>My Technical Skills",
+        aboutTaglineCard: "Ambitious Web Developer & UI Designer",
+        whoAmITitle: "<i class='fas fa-user-secret me-2 text-secondary'></i>Who Am I?",
+        aboutIntro: "Hello! I'm Said, a passionate Egyptian web developer with a keen interest in all new things tech. I am currently focused on deepening my expertise in frontend development using the latest tools and techniques, alongside building a solid foundation in backend development.",
+        aboutAmbition: "I always strive to transform innovative ideas into practical and interactive web projects that add value to the user. I believe that continuous learning, passion for detail, and striving for excellence are the keys to success in this ever-evolving field. This web development journey for me is not just a job, but a passion and joy in building things from scratch and seeing them come to life.",
+        mySkillsTitle: "<i class='fas fa-cogs me-2 text-secondary'></i>My Technical Skills",
         skillHTML: "HTML5",
         skillCSS: "CSS3",
         skillJS: "JavaScript",
-        skillWP: "WordPress <small class='d-block text-muted'>(Learning)</small>",
-        skillElementor: "Elementor <small class='d-block text-muted'>(Learning)</small>",
-        skillBackend: "Backend <small class='d-block text-muted'>(Basic Experience)</small>",
-        skillPython: "Python <small class='d-block text-muted'>(with Flask)</small>",
-        skillBootstrap: "Bootstrap",
-        contactMeTitle: "<i class='fas fa-envelope-open-text me-2'></i>Get in Touch",
-        contactPrompt: "I'm always happy to connect and exchange experiences. You can find me on:",
-        emailButtonAbout: "<i class='fas fa-envelope fa-fw me-2'></i>Email Me",
-        githubButtonAbout: "<i class='fab fa-github fa-fw me-2'></i>GitHub",
+        skillWP: "WordPress <small class='d-block text-muted-custom'>(Learning)</small>",
+        skillElementor: "Elementor <small class='d-block text-muted-custom'>(Learning)</small>",
+        skillBackend: "Backend Concepts <small class='d-block text-muted-custom'>(Basics)</small>",
+        skillPython: "Python <small class='d-block text-muted-custom'>(with Flask)</small>",
+        skillBootstrap: "Bootstrap 5",
+        contactMeTitle: "<i class='fas fa-comments me-2 text-secondary'></i>Get in Touch",
+        contactPrompt: "I'm always happy to hear from you, whether you have an inquiry, a suggestion, or an opportunity for collaboration. You can reach me via:",
+        emailButtonAbout: "<i class='fas fa-at fa-fw me-2'></i>Email Me",
+        githubButtonAbout: "<i class='fab fa-github-alt fa-fw me-2'></i>My GitHub",
         
         // --- Dashboard (dashboard.html) ---
-        // Meta title is already defined above (metaTitleDashboard)
         formTitleDashboard: "<i class='fas fa-folder-plus me-2'></i>Add New Project to Dashboard",
         labelProjectNameDashboard: "Project Name:",
         labelProjectUrlDashboard: "Project URL:",
@@ -80,29 +79,30 @@ const siteTranslations = {
         refreshProjectsBtnTextDashboard: "<i class='fas fa-redo-alt me-1'></i>Refresh List",
         deleteConfirmMessage: "Are you absolutely sure you want to delete the project \"<strong>{projectName}</strong>\"? This action is irreversible.",
         deleteButtonTitle: "Delete this project",
+        visitProjectBtnText: "<i class='fas fa-external-link-alt me-1'></i>Visit Project", // For dashboard project cards
         projectDeletedSuccess: "Project \"{projectName}\" has been successfully deleted.",
         errorDeletingProject: "Oops! Could not delete project \"{projectName}\".",
         confirmDeleteBtn: "Yes, Delete It",
         cancelDeleteBtn: "Cancel",
-        alerts: {
-            allFieldsRequiredDashboard: "Hold on! Project Name, URL, and Description are all required for the dashboard.",
+        addingProjectInProgress: "<i class=\"fas fa-spinner fa-spin me-2\"></i>Adding...",
+        alerts: { 
+            allFieldsRequiredDashboard: "Hold on! Project Name, URL, and Description are all required.",
             urlInvalid: "Hmm, that URL doesn't look right. Please use a valid format (e.g., https://example.com).",
             projectAddedSuccessDashboard: "Project added successfully! It's now in your list.",
             errorAdding: "Oops! Error adding project. Please check your input or server.",
-            networkError: "Network Error! Please check your internet connection or if the backend server is running.",
-            errorFetching: "Could not fetch projects. The server might be resting or unavailable!",
+            networkError: "Network Error! Please check your internet or backend server.",
+            errorFetching: "Could not fetch projects. Server might be resting!",
             projectNotFound: "Project not found for deletion.",
-            // From backend, ensure these keys match what backend.py sends for specific errors
-            noUrlProvided: "No URL provided to the server.", // Example key for a backend message
-            urlCannotBeEmpty: "URL cannot be empty (checked by server).", // Example
-            invalidUrlFormatBackend: "Invalid URL format from server." // Example
+            noUrlProvided: "No URL provided to the server.",
+            urlCannotBeEmpty: "URL cannot be empty (server check).",
+            invalidUrlFormatBackend: "Invalid URL format from server."
         }
     },
     ar: {
         // Meta Titles
-        metaTitleHome: "سعيد هاني - مطور ويب إبداعي",
-        metaTitleAboutPage: "عني - سعيد هاني",
-        metaTitleDashboard: "لوحة تحكم المشاريع - سعيد هاني",
+        metaTitleHome: "سعيد هاني - مطور ويب ومصمم واجهات إبداعية",
+        metaTitleAboutPage: "عني - سعيد هاني | مطور ويب",
+        metaTitleDashboard: "لوحة تحكم المشاريع - سعيد هاني (خاص)",
 
         // Navbar (shared)
         navBrandSiteName: "<span class='brand-icon'><i class='fas fa-meteor'></i></span> سعيد هاني",
@@ -138,30 +138,30 @@ const siteTranslations = {
         projectCard3Title: "لوحة تحكم المشاريع",
         projectCard3Desc: "أداتي الشخصية لإدارة وتتبع المشاريع البرمجية، تم تطويرها باستخدام Python (Flask) للباك إند و JavaScript للفرونت إند.",
         projectCard3Btn: "<i class='fas fa-user-shield me-1'></i>الدخول للوحة (خاص)",
-        contactSectionTitle: "<span><i class='fas fa-hands-helping me-2'></i>لنتعاون معًا!</span>",
+        contactSectionTitle: "<span><i class='fas fa-bullhorn me-2'></i>هل لديك فكرة؟ لنتحدث!</span>",
         contactSectionSubtext: "إذا كان لديك مشروع مثير للاهتمام، فكرة تود تحويلها إلى واقع، أو حتى مجرد رغبة في تبادل الخبرات، لا تتردد في التواصل.",
         contactBtnEmail: "<i class='fas fa-at me-2'></i>تواصل عبر البريد",
-
+        
         // --- About Page (about.html) ---
-        aboutMainTitle: "<i class='fas fa-id-card me-2'></i>نبذة عني",
+        aboutMainTitle: "<span><i class='fas fa-id-card-alt me-2'></i>نبذة تعريفية شاملة</span>",
         aboutNameCard: "سعيد هاني",
-        aboutTaglineCard: "مطور ويب طموح",
-        whoAmITitle: "<i class='fas fa-question-circle me-2'></i>من أنا؟",
-        aboutIntro: "أهلاً! أنا سعيد، مطور ويب شغوف، أركز حاليًا على صقل مهاراتي في أحدث تقنيات الواجهة الأمامية والخلفية. أسعى دائمًا لتعلم الجديد وتطبيق ما أتعلمه في مشاريع عملية ومبتكرة.",
-        aboutAmbition: "أحد أهدافي هو إنشاء أدوات وتطبيقات ويب مفيدة، وهذه اللوحة لإدارة المشاريع هي خطوة في هذا الاتجاه، حيث أهدف لتنظيم أعمالي ومتابعة تقدمي. أؤمن بأن التعلم المستمر والتطبيق العملي هما مفتاح التطور في هذا المجال الديناميكي.",
-        mySkillsTitle: "<i class='fas fa-cogs me-2'></i>مهاراتي التقنية",
+        aboutTaglineCard: "مطور ويب ومصمم واجهات طموح",
+        whoAmITitle: "<i class='fas fa-user-secret me-2 text-secondary'></i>من أنا؟",
+        aboutIntro: "أهلاً بكم في صفحتي! أنا سعيد هاني، مطور ويب مصري شغوف بكل ما هو جديد في عالم التقنية. أركز حاليًا على تعميق خبراتي في تطوير الواجهات الأمامية (Frontend) باستخدام أحدث الأدوات والتقنيات، بالإضافة إلى بناء أساس قوي في تطوير الواجهات الخلفية (Backend).",
+        aboutAmbition: "أسعى دائمًا لتحويل الأفكار المبتكرة إلى مشاريع ويب عملية وتفاعلية تضيف قيمة للمستخدم. أؤمن بأن التعلم المستمر، الشغف بالتفاصيل، والسعي نحو الإتقان هي مفاتيح النجاح في هذا المجال المتجدد باستمرار. هذه الرحلة في تطوير الويب بالنسبة لي ليست مجرد عمل، بل هي شغف ومتعة في بناء الأشياء من الصفر ورؤيتها تنبض بالحياة.",
+        mySkillsTitle: "<i class='fas fa-cogs me-2 text-secondary'></i>مهاراتي التقنية",
         skillHTML: "HTML5",
         skillCSS: "CSS3",
         skillJS: "JavaScript",
-        skillWP: "WordPress <small class='d-block text-muted'>(أتعلمه)</small>",
-        skillElementor: "Elementor <small class='d-block text-muted'>(أتعلمه)</small>",
-        skillBackend: "باك إند <small class='d-block text-muted'>(خبرة بسيطة)</small>",
-        skillPython: "Python <small class='d-block text-muted'>(مع Flask)</small>",
-        skillBootstrap: "Bootstrap",
-        contactMeTitle: "<i class='fas fa-envelope-open-text me-2'></i>تواصل معي",
-        contactPrompt: "يسعدني دائمًا التواصل وتبادل الخبرات. يمكنك إيجادي على:",
-        emailButtonAbout: "<i class='fas fa-envelope fa-fw me-2'></i>راسلني",
-        githubButtonAbout: "<i class='fab fa-github fa-fw me-2'></i>GitHub",
+        skillWP: "WordPress <small class='d-block text-muted-custom'>(أتعلمه)</small>",
+        skillElementor: "Elementor <small class='d-block text-muted-custom'>(أتعلمه)</small>",
+        skillBackend: "مفاهيم Backend <small class='d-block text-muted-custom'>(أساسيات)</small>",
+        skillPython: "Python <small class='d-block text-muted-custom'>(مع Flask)</small>",
+        skillBootstrap: "Bootstrap 5",
+        contactMeTitle: "<i class='fas fa-comments me-2 text-secondary'></i>تواصل معي",
+        contactPrompt: "يسعدني دائمًا أن أسمع منك، سواء كان لديك استفسار، اقتراح، أو فرصة للتعاون. يمكنك التواصل معي عبر:",
+        emailButtonAbout: "<i class='fas fa-at fa-fw me-2'></i>البريد الإلكتروني",
+        githubButtonAbout: "<i class='fab fa-github-alt fa-fw me-2'></i>حسابي على GitHub",
 
         // --- Dashboard (dashboard.html) ---
         formTitleDashboard: "<i class='fas fa-folder-plus me-2'></i>إضافة مشروع جديد للوحة التحكم",
@@ -175,12 +175,14 @@ const siteTranslations = {
         refreshProjectsBtnTextDashboard: "<i class='fas fa-redo-alt me-1'></i>تحديث القائمة",
         deleteConfirmMessage: "هل أنت متأكد أنك تريد حذف مشروع \"<strong>{projectName}</strong>\"؟ لا يمكن التراجع عن هذا الإجراء.",
         deleteButtonTitle: "حذف هذا المشروع",
+        visitProjectBtnText: "<i class='fas fa-external-link-alt me-1'></i>زيارة المشروع",
         projectDeletedSuccess: "تم حذف مشروع \"{projectName}\" بنجاح.",
         errorDeletingProject: "عفوًا! تعذر حذف مشروع \"{projectName}\".",
         confirmDeleteBtn: "نعم، احذف",
         cancelDeleteBtn: "إلغاء",
+        addingProjectInProgress: "<i class=\"fas fa-spinner fa-spin me-2\"></i>جاري الإضافة...",
         alerts: {
-            allFieldsRequiredDashboard: "لحظة من فضلك! اسم المشروع، الرابط، والوصف كلها مطلوبة للوحة التحكم.",
+            allFieldsRequiredDashboard: "لحظة من فضلك! اسم المشروع، الرابط، والوصف كلها مطلوبة.",
             urlInvalid: "هممم، هذا الرابط لا يبدو صحيحًا. يرجى استخدام تنسيق صالح (http:// أو https://).",
             projectAddedSuccessDashboard: "تمت إضافة المشروع بنجاح! أصبح الآن في قائمتك.",
             errorAdding: "عفوًا! خطأ في إضافة المشروع. يرجى التحقق من مدخلاتك أو الخادم.",
@@ -193,15 +195,16 @@ const siteTranslations = {
         }
     }
 };
+// --- END: Comprehensive Translations Object ---
 
-let currentGlobalLanguage = localStorage.getItem('preferredGlobalLanguage') || (navigator.language.toLowerCase().startsWith('ar') ? 'ar' : 'en');
+let currentGlobalLanguage = localStorage.getItem('preferredGlobalLanguage') || (document.documentElement.lang === 'ar' ? 'ar' : 'en');
 
 function updateTextContentGlobal(elementId, translationKey, translationsObject) {
     const element = document.getElementById(elementId);
     if (element && translationsObject && translationsObject[translationKey]) {
-        element.innerHTML = translationsObject[translationKey];
+        element.innerHTML = translationsObject[translationKey]; // Use innerHTML to support HTML in translations
     } else if (element) {
-        // console.warn(`Translation key "${translationKey}" or translationsObject missing for element "#${elementId}".`);
+        // console.warn(`Translation key "${translationKey}" missing for element "#${elementId}" in lang "${currentGlobalLanguage}".`);
     }
 }
 
@@ -217,38 +220,45 @@ function applyGlobalTranslations(lang) {
     document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
     document.body.classList.toggle('rtl', lang === 'ar');
 
-    // Translate meta titles for all pages
-    const pageSpecificMetaTitleKey = document.body.classList.contains('homepage') ? 'metaTitleHome' :
-                                   document.getElementById('aboutMainTitle') ? 'metaTitleAboutPage' :
-                                   document.getElementById('formTitle') ? 'metaTitleDashboard' : null;
-    if (pageSpecificMetaTitleKey && trans[pageSpecificMetaTitleKey]) {
-        document.title = trans[pageSpecificMetaTitleKey].replace(/<[^>]*>?/gm, '');
+    // Determine current page to apply specific meta title
+    let metaTitleKey;
+    if (document.body.classList.contains('homepage')) {
+        metaTitleKey = 'metaTitleHome';
+    } else if (document.querySelector('.about-card')) { // Check for a unique element on about page
+        metaTitleKey = 'metaTitleAboutPage';
+    } else if (document.getElementById('projectForm')) { // Check for a unique element on dashboard page
+        metaTitleKey = 'metaTitleDashboard';
     }
-
-
-    // Shared Elements (Navbar) - Using more specific IDs
-    updateTextContentGlobal('navBrandSiteName', 'navBrandSiteName', trans); // For index.html
-    updateTextContentGlobal('navBrandSiteNameDashboard', 'navBrandSiteName', trans); // For dashboard.html
-    updateTextContentGlobal('navBrandSiteNameAbout', 'navBrandSiteName', trans); // For about.html
+    if (metaTitleKey && trans[metaTitleKey]) {
+        document.title = trans[metaTitleKey].replace(/<[^>]*>?/gm, ''); // Strip HTML for title tag
+    }
     
-    updateTextContentGlobal('navLinkHome', 'navLinkHome', trans); // For index.html
-    updateTextContentGlobal('navLinkAbout', 'navLinkAbout', trans); // For index.html
-    updateTextContentGlobal('navLinkProjects', 'navLinkProjects', trans); // For index.html
-    updateTextContentGlobal('navLinkContact', 'navLinkContact', trans); // For index.html
+    // Navbar elements (using more specific IDs for each navbar for clarity)
+    // Homepage Navbar
+    updateTextContentGlobal('navBrandSiteName', 'navBrandSiteName', trans);
+    updateTextContentGlobal('navLinkHome', 'navLinkHome', trans);
+    updateTextContentGlobal('navLinkAbout', 'navLinkAbout', trans);
+    updateTextContentGlobal('navLinkProjects', 'navLinkProjects', trans);
+    updateTextContentGlobal('navLinkContact', 'navLinkContact', trans);
 
-    updateTextContentGlobal('navLinkHomeDashboard', 'navLinkHomeDashboard', trans); // For dashboard.html
-    updateTextContentGlobal('navLinkDashboard', 'navLinkDashboard', trans); // For dashboard.html
-    updateTextContentGlobal('navLinkAboutDashboard', 'navLinkAboutDashboard', trans); // For dashboard.html
+    // About Page Navbar
+    updateTextContentGlobal('navBrandSiteNameAbout', 'navBrandSiteName', trans);
+    updateTextContentGlobal('navLinkHomeAbout', 'navLinkHome', trans);
+    updateTextContentGlobal('navLinkAboutAbout', 'navLinkAbout', trans);
+    updateTextContentGlobal('navLinkProjectsAbout', 'navLinkProjects', trans);
+    updateTextContentGlobal('navLinkContactAbout', 'navLinkContact', trans);
+    
+    // Dashboard Navbar
+    updateTextContentGlobal('navBrandSiteNameDashboard', 'navBrandSiteName', trans); // Assuming same brand text
+    updateTextContentGlobal('navLinkHomeDashboard', 'navLinkHomeDashboard', trans);
+    updateTextContentGlobal('navLinkDashboard', 'navLinkDashboard', trans);
+    updateTextContentGlobal('navLinkAboutDashboard', 'navLinkAboutDashboard', trans);
 
-    updateTextContentGlobal('navLinkHomeAbout', 'navLinkHome', trans);      // For about.html
-    updateTextContentGlobal('navLinkAboutAbout', 'navLinkAbout', trans);  // For about.html
-
-
-    // Shared Footer
-    const footerTextElements = document.querySelectorAll('#footerText'); // Common ID for footer P tag
-    footerTextElements.forEach(el => {
-        if (el) el.innerHTML = trans.footerText.replace('{year}', new Date().getFullYear());
-    });
+    // Footer (use specific IDs for each footer P tag)
+    const year = new Date().getFullYear();
+    updateTextContentGlobal('footerText', trans.footerText.replace('{year}', year), trans); // For index.html footer
+    updateTextContentGlobal('footerTextAbout', trans.footerText.replace('{year}', year), trans); // For about.html footer
+    updateTextContentGlobal('footerTextDashboard', trans.footerText.replace('{year}', year), trans); // For dashboard.html footer
 
 
     // --- Page-Specific Translations ---
@@ -273,8 +283,7 @@ function applyGlobalTranslations(lang) {
         updateTextContentGlobal('contactSectionTitle', 'contactSectionTitle', trans);
         updateTextContentGlobal('contactSectionSubtext', 'contactSectionSubtext', trans);
         updateTextContentGlobal('contactBtnEmail', 'contactBtnEmail', trans);
-    }
-    else if (document.getElementById('aboutMainTitle')) { // About Page
+    } else if (document.querySelector('.about-card')) { // About Page
         updateTextContentGlobal('aboutMainTitle', 'aboutMainTitle', trans);
         updateTextContentGlobal('aboutNameCard', 'aboutNameCard', trans);
         updateTextContentGlobal('aboutTaglineCard', 'aboutTaglineCard', trans);
@@ -294,9 +303,7 @@ function applyGlobalTranslations(lang) {
         updateTextContentGlobal('contactPrompt', 'contactPrompt', trans);
         updateTextContentGlobal('emailButtonAbout', 'emailButtonAbout', trans);
         updateTextContentGlobal('githubButtonAbout', 'githubButtonAbout', trans);
-    }
-    else if (document.getElementById('formTitle')) { // Dashboard Page
-        // Most dashboard texts are handled by script.js, but we can set titles here
+    } else if (document.getElementById('projectForm')) { // Dashboard Page
         updateTextContentGlobal('formTitle', 'formTitleDashboard', trans);
         updateTextContentGlobal('labelProjectName', 'labelProjectNameDashboard', trans);
         updateTextContentGlobal('labelProjectUrl', 'labelProjectUrlDashboard', trans);
@@ -304,51 +311,104 @@ function applyGlobalTranslations(lang) {
         updateTextContentGlobal('submitProjectButton', 'submitProjectButtonDashboard', trans);
         updateTextContentGlobal('savedProjectsTitle', 'savedProjectsTitleDashboard', trans);
         updateTextContentGlobal('loadingProjectsText', 'loadingProjectsTextDashboard', trans);
-        updateTextContentGlobal('noProjectsText', 'noProjectsTextDashboard', trans); // Initial text
+        updateTextContentGlobal('noProjectsText', 'noProjectsTextDashboard', trans);
         updateTextContentGlobal('refreshProjectsBtnText', 'refreshProjectsBtnTextDashboard', trans);
-        // Placeholders are handled by the dashboard's script.js or directly in setLanguage in script.js
+        // Update placeholders for dashboard form inputs
+        const pnInput = document.getElementById('projectName');
+        const puInput = document.getElementById('projectUrl');
+        const pdInput = document.getElementById('projectDescription');
+        if (pnInput) pnInput.placeholder = lang === 'ar' ? "مثال: نظام إدارة المهام" : "e.g., Task Management System";
+        if (puInput) puInput.placeholder = "https://myproject.example.com";
+        if (pdInput) pdInput.placeholder = lang === 'ar' ? "اشرح فكرة المشروع وأهميته..." : "Explain the project idea and its importance...";
     }
 
-    // Update active language button style
-    const langBtnAr = document.getElementById('langBtnAr') || document.getElementById('langBtnArDashboard');
-    const langBtnEn = document.getElementById('langBtnEn') || document.getElementById('langBtnEnDashboard');
-    if (langBtnAr && langBtnEn) {
-        langBtnAr.classList.toggle('active-lang', lang === 'ar');
-        langBtnEn.classList.toggle('active-lang', lang === 'en');
-    }
+    // Update active language button style for all navbars
+    document.querySelectorAll('.language-selector-container').forEach(container => {
+        const btnAr = container.querySelector('[id^="langBtnAr"]'); // Matches langBtnAr, langBtnArPage, langBtnArDashboard
+        const btnEn = container.querySelector('[id^="langBtnEn"]');
+        if(btnAr) btnAr.classList.toggle('active-lang', lang === 'ar');
+        if(btnEn) btnEn.classList.toggle('active-lang', lang === 'en');
+    });
     
     localStorage.setItem('preferredGlobalLanguage', lang);
 
-    // If on dashboard, call its specific fetch/display function
+    // If on dashboard and fetchAndDisplayProjectsDashboard function exists, call it
     if (typeof fetchAndDisplayProjectsDashboard === 'function' && document.getElementById('projectsListContainer')) {
-        fetchAndDisplayProjectsDashboard();
+        fetchAndDisplayProjectsDashboard(); // This will re-fetch and display projects with new lang
     }
 }
 
-// --- Initial Language Setup & Event Listeners for Lang Buttons ---
+// --- Initialize on DOMContentLoaded ---
 document.addEventListener('DOMContentLoaded', () => {
     applyGlobalTranslations(currentGlobalLanguage); // Apply on load
 
-    // Event listeners for language buttons (assuming unique IDs like langBtnArGlobal, langBtnEnGlobal if needed)
-    // Or rely on the specific page's script to handle its own buttons if IDs are duplicated.
-    // For this setup, using IDs specific to each navbar (e.g. langBtnAr, langBtnArDashboard)
+    // Language switchers event listeners (for all navbars using the same class structure)
+    document.querySelectorAll('.language-selector-container').forEach(container => {
+        const btnAr = container.querySelector('[id^="langBtnAr"]');
+        const btnEn = container.querySelector('[id^="langBtnEn"]');
+        if(btnAr) btnAr.addEventListener('click', () => applyGlobalTranslations('ar'));
+        if(btnEn) btnEn.addEventListener('click', () => applyGlobalTranslations('en'));
+    });
     
-    // For general lang buttons (if any page uses these IDs directly)
-    const btnAr = document.getElementById('langBtnAr');
-    const btnEn = document.getElementById('langBtnEn');
-    if (btnAr) btnAr.addEventListener('click', () => applyGlobalTranslations('ar'));
-    if (btnEn) btnEn.addEventListener('click', () => applyGlobalTranslations('en'));
+    // Navbar scroll effect
+    const mainNavbar = document.querySelector('.main-navbar');
+    if (mainNavbar && mainNavbar.classList.contains('initial-navbar-transparent')) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                mainNavbar.classList.remove('initial-navbar-transparent');
+                mainNavbar.classList.add('scrolled-navbar');
+            } else {
+                mainNavbar.classList.add('initial-navbar-transparent');
+                mainNavbar.classList.remove('scrolled-navbar');
+            }
+        });
+    } else if (mainNavbar) {
+         mainNavbar.classList.add('scrolled-navbar');
+    }
 
-    // For dashboard specific lang buttons
-    const btnArDash = document.getElementById('langBtnArDashboard');
-    const btnEnDash = document.getElementById('langBtnEnDashboard');
-    if (btnArDash) btnArDash.addEventListener('click', () => applyGlobalTranslations('ar'));
-    if (btnEnDash) btnEnDash.addEventListener('click', () => applyGlobalTranslations('en'));
+    // Auto-close mobile navbar on link click or scroll
+    const navLinks = document.querySelectorAll('.navbar-collapse .nav-link'); // More specific selector
+    const navToggler = document.querySelector('.navbar-toggler');
+    const navCollapse = document.querySelector('.navbar-collapse');
+
+    function closeMobileNav() {
+        if (navToggler && navCollapse && navCollapse.classList.contains('show')) {
+            const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+            if (bsCollapse) {
+                bsCollapse.hide();
+            } else {
+                navCollapse.classList.remove('show');
+            }
+        }
+    }
+    navLinks.forEach(link => {
+        link.addEventListener('click', closeMobileNav);
+    });
+    // Remove close on scroll as it can be jarring
+    // window.addEventListener('scroll', closeMobileNav, { passive: true });
 
 
     // Update year in footers
-    const yearSpans = document.querySelectorAll('#currentYearMain, #currentYearDashboard, #currentYearAboutPage'); // IDs from HTML footers
+    const yearSpans = document.querySelectorAll('#currentYearMain, #currentYearDashboard, #currentYearAboutPage');
     yearSpans.forEach(span => {
         if(span) span.textContent = new Date().getFullYear();
     });
+
+    // Intersection Observer for section animations
+    const animatedSections = document.querySelectorAll('.section-animated');
+    if (typeof IntersectionObserver === 'function') {
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+        animatedSections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+    } else {
+        animatedSections.forEach(section => section.classList.add('fade-in-up'));
+    }
 });

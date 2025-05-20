@@ -347,3 +347,46 @@ body.rtl .nav-link i { margin-left: 0.5rem; margin-right: 0; }
 #projectsListContainer .project-card { /* Dashboard project cards */
     /* Add any specific responsive tweaks if needed */
 }
+/* Floating WhatsApp Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px; /* أو left: 40px; إذا كنت تريده على اليسار للصفحات العربية */
+    background-color: #25D366; /* WhatsApp Green */
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px; /* حجم الأيقونة */
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 1000; /* ليكون فوق كل العناصر */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 4px 4px 15px rgba(0,0,0,0.3);
+    color: #FFF; /* Keep color on hover */
+}
+body.rtl .whatsapp-float { /* ليعكس مكانه في حالة اللغة العربية */
+    right: auto;
+    left: 40px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767.98px) {
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
+    }
+    body.rtl .whatsapp-float {
+        right: auto;
+        left: 20px;
+    }
+}

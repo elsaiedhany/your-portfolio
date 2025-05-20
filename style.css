@@ -1,83 +1,115 @@
-/* style.css - NEW PROFESSIONAL & CREATIVE DESIGN */
+/* STYLESHEET: Professional & Creative Redesign for Said Hany's Portfolio & Dashboard */
+/* Author: Gemini AI (with Said's Vision) */
+/* Date: May 20, 2025 */
 
-/* --- Google Fonts Import (Alternative to HTML link, choose one method) --- */
-/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&family=El+Messiri:wght@500;700&display=swap'); */
+/* --- Google Fonts Import (Ensure this is also linked in HTML or choose one method) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Open+Sans:wght@400;600&family=El+Messiri:wght@500;600;700&display=swap');
 
-/* --- Global Variables & Theme Setup --- */
+/* --- CSS Variables (Theme Colors & Properties) --- */
 :root {
-    --primary-color: #007bff; /* Bootstrap Primary - يمكن تغييره للون أكثر إبداعًا */
-    --secondary-color: #6c757d; /* Bootstrap Secondary */
-    --light-bg: #f8f9fa;
-    --dark-bg: #212529; /* للوضع الداكن مستقبلاً */
-    --text-color-light: #212529;
-    --text-color-dark: #f8f9fa;
-    --card-bg: #ffffff;
-    --card-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
-    --border-color: #dee2e6;
-    --font-family-headings: 'Montserrat', 'El Messiri', sans-serif; /* El Messiri للعربية في العناوين */
-    --font-family-body: 'Open Sans', 'El Messiri', sans-serif; /* El Messiri للعربية في النصوص */
-    --border-radius: 0.5rem; /* دائرية حواف أكبر قليلاً */
+    --primary-color: #34495e; /* Dark Blue/Charcoal */
+    --secondary-color: #f1c40f; /* Golden Yellow */
+    --accent-color: #e67e22; /* Orange/Burnt Sienna for specific highlights */
+    
+    --light-bg: #ecf0f1; /* Light Gray Background */
+    --card-bg: #ffffff; /* White for cards */
+    --text-color-dark: #2c3e50; /* Dark text on light backgrounds */
+    --text-color-light: #f8f9fa; /* Light text on dark backgrounds */
+    --border-color: #bdc3c7; /* Subtle border color */
+    
+    --font-family-headings: 'Montserrat', 'El Messiri', sans-serif;
+    --font-family-body: 'Open Sans', 'El Messiri', sans-serif;
+    
+    --base-font-size: 16px;
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --box-shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.08);
+    --box-shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    --navbar-height: 70px; /* Adjust if needed */
 }
 
-/* --- Body & General Styling --- */
+/* --- General Body & HTML Styling --- */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-family-body);
     background-color: var(--light-bg);
-    color: var(--text-color-light);
-    line-height: 1.7;
-    padding-top: 80px; /* Account for fixed navbar height */
+    color: var(--text-color-dark);
+    line-height: 1.75;
+    font-size: var(--base-font-size);
+    padding-top: var(--navbar-height); /* For fixed navbar */
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-body.rtl { /* عند تفعيل اللغة العربية */
+body.rtl {
     direction: rtl;
 }
-body.rtl, body.rtl input, body.rtl textarea, body.rtl button, body.rtl .navbar-brand, body.rtl .nav-link, body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4, body.rtl h5, body.rtl h6, body.rtl p, body.rtl label, body.rtl .card-title, body.rtl .card-text {
-    font-family: 'El Messiri', 'Open Sans', sans-serif; /* El Messiri أولاً */
+body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4, body.rtl h5, body.rtl h6,
+body.rtl .navbar-brand, body.rtl .nav-link, body.rtl button, body.rtl label, body.rtl p {
+    font-family: 'El Messiri', 'Open Sans', sans-serif;
 }
 
-
 /* --- Navbar Styling --- */
-.navbar {
-    background-color: rgba(255, 255, 255, 0.95); /* خلفية بيضاء شبه شفافة */
-    backdrop-filter: blur(10px); /* تأثير ضبابي للخلفية */
+.main-navbar { /* Applied to all navbars */
+    background-color: rgba(255, 255, 255, 0.97); /* Slightly less transparent white */
+    backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    min-height: var(--navbar-height);
+    transition: background-color 0.3s ease;
 }
 
 .navbar-brand {
     font-family: var(--font-family-headings);
     font-weight: 700;
-    font-size: 1.5rem; /* حجم أكبر قليلاً لاسم الموقع */
+    font-size: 1.6rem; /* Slightly larger */
     color: var(--primary-color) !important;
+    transition: color 0.3s ease;
+}
+.navbar-brand:hover {
+    color: var(--secondary-color) !important;
 }
 .navbar-brand i {
-    color: var(--primary-color);
+    color: var(--secondary-color); /* Icon color */
+    margin-right: 0.5rem;
+}
+body.rtl .navbar-brand i {
+    margin-left: 0.5rem;
+    margin-right: 0;
 }
 
 .nav-link {
     font-family: var(--font-family-body);
-    font-weight: 500;
-    color: #555 !important; /* لون أغمق للروابط */
-    padding: 0.5rem 1rem !important;
-    border-radius: var(--border-radius);
+    font-weight: 600; /* Slightly bolder nav links */
+    color: var(--text-color-dark) !important;
+    padding: 0.6rem 1rem !important;
+    border-radius: var(--border-radius-sm);
     transition: background-color 0.2s ease, color 0.2s ease;
+    margin: 0 0.25rem; /* Spacing between nav items */
 }
-.nav-link:hover, .nav-link.active {
-    background-color: var(--primary-color) !important;
-    color: white !important;
+.nav-link:hover {
+    background-color: var(--primary-color);
+    color: var(--text-color-light) !important;
 }
 .nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--text-color-light) !important;
     font-weight: 700;
 }
 .nav-link i {
-    margin-right: 0.3rem;
+    margin-right: 0.4rem;
+    font-size: 0.9em; /* Slightly smaller icon in nav link */
 }
 body.rtl .nav-link i {
-    margin-left: 0.3rem;
+    margin-left: 0.4rem;
     margin-right: 0;
 }
 
@@ -86,30 +118,124 @@ body.rtl .nav-link i {
     font-weight: 600;
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
-    padding: 0.25rem 0.6rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.85em;
+    border-radius: 50px; /* Pill shape */
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-.btn-lang-switcher:hover, .btn-lang-switcher.active-lang { /* يمكن إضافة كلاس active-lang بالجافاسكريبت */
+.btn-lang-switcher:hover,
+.btn-lang-switcher.active-lang {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--text-color-light);
 }
 
-/* --- Main Content --- */
+/* --- Main Content Area --- */
 .site-main-content {
     flex-grow: 1;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4rem;
 }
 
-.section-title, .page-main-title {
+/* --- Headings & Titles --- */
+.section-title-mainpage, .page-main-title { /* For index.html and about.html main titles */
     font-family: var(--font-family-headings);
     font-weight: 700;
-    color: var(--text-color-light); /* لون داكن للعناوين الرئيسية */
-    margin-bottom: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 1rem;
+    font-size: 2.5rem; /* Larger title */
+}
+.section-title-mainpage::after, .page-main-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px; /* Wider decorative line */
+    height: 5px;
+    background: linear-gradient(to right, var(--secondary-color), var(--accent-color)); /* Gradient line */
+    border-radius: 3px;
+}
+.section-subtitle { /* For subheadings in about page */
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+.stylish-hr-mainpage, .stylish-hr { /* For index.html and dashboard.html */
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--border-color), rgba(0, 0, 0, 0));
+}
+
+/* --- Card Styling (General & Dashboard) --- */
+.project-form-card, .about-card, .project-card {
+    border: none;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-soft);
+    background-color: var(--card-bg);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+.project-form-card:hover, .about-card:hover, .project-card:hover {
+    box-shadow: var(--box-shadow-strong);
+    transform: translateY(-3px);
+}
+
+.project-form-card .card-body { /* For dashboard form */
+    padding: 2rem 2.5rem !important;
+}
+.project-form-card .card-title {
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.project-form-card .form-label {
+    font-weight: 600;
+    color: var(--text-color-dark);
+}
+.project-form-card .form-control {
+    background-color: var(--light-bg); /* Light background for form fields */
+    border: 1px solid var(--border-color);
+    color: var(--text-color-dark);
+    border-radius: var(--border-radius-sm);
+    padding: 0.8rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.project-form-card .form-control::placeholder {
+    color: #95a5a6; /* Lighter placeholder */
+}
+.project-form-card .form-control:focus {
+    background-color: var(--card-bg);
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb, 52, 73, 94), 0.25); /* Use RGB for primary or fallback */
+}
+.btn-submit-project {
+    background-color: var(--secondary-color);
+    border: none;
+    color: var(--text-color-dark); /* Dark text on yellow button for contrast */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.9rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-submit-project:hover {
+    background-color: #dab10d; /* Darker yellow */
+    transform: translateY(-2px);
+    color: var(--text-color-dark);
+}
+
+/* --- Saved Projects Cards (Dashboard) --- */
+#saved-projects-section .section-title { /* Specific title for saved projects section */
+    font-family: var(--font-family-headings);
+    font-weight: 700;
+    color: var(--primary-color);
     position: relative;
     padding-bottom: 0.5rem;
 }
-.section-title::after, .page-main-title::after { /* خط تزييني تحت العنوان */
+#saved-projects-section .section-title::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -117,222 +243,274 @@ body.rtl .nav-link i {
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     border-radius: 2px;
 }
-.section-subtitle {
-    font-family: var(--font-family-headings);
-    font-weight: 500;
-    color: var(--primary-color);
-}
 
-.stylish-hr {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
-}
-
-/* --- Project Form Card --- */
-.project-form-card {
-    border: none;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%); /* تدرج لوني للخلفية */
-    color: white;
-}
-.project-form-card .card-body {
-    padding: 2.5rem !important;
-}
-.project-form-card .card-title {
-    font-family: var(--font-family-headings);
-    font-weight: 700;
-    color: white;
-}
-.project-form-card .form-label {
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
-}
-.project-form-card .form-control {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: white;
-    border-radius: var(--border-radius);
-    padding: 0.75rem 1rem; /* زيادة الحشو */
-}
-.project-form-card .form-control::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-}
-.project-form-card .form-control:focus {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.7);
-    box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
-    color: white;
-}
-.btn-submit-project {
-    background-color: #28a745; /* لون أخضر مميز */
-    border: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding: 0.8rem 1.5rem;
-    border-radius: var(--border-radius);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-.btn-submit-project:hover {
-    background-color: #218838;
-    transform: translateY(-2px);
-}
-
-/* --- Saved Projects Cards --- */
-.project-card {
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius);
-    box-shadow: 0 0.25rem 0.75rem rgba(0,0,0,0.07);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    background-color: var(--card-bg);
-}
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--card-shadow);
-}
 .project-card-header {
-    background-color: var(--primary-color); /* لون رأس البطاقة */
-    color: white;
-    padding: 0.75rem 1.25rem;
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 0.8rem 1.25rem;
     border-bottom: none;
-    border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius);
+    border-top-left-radius: var(--border-radius-md);
+    border-top-right-radius: var(--border-radius-md);
 }
 .project-card-header .card-title {
     font-family: var(--font-family-headings);
-    font-weight: 500;
+    font-weight: 600; /* Bolder title for project card */
+    font-size: 1.1rem;
 }
 .project-card .project-description {
-    font-size: 0.95em;
-    color: #555;
-    min-height: 60px; /* لضمان ارتفاع متناسق للوصف */
+    font-size: 0.9rem;
+    color: #555e65; /* Slightly darker text for description */
+    min-height: 70px;
+    line-height: 1.6;
 }
 .project-card-footer {
     background-color: transparent;
     border-top: 1px solid var(--border-color);
-    padding: 0.75rem 1.25rem;
+    padding: 0.8rem 1.25rem;
 }
 .btn-visit-project {
-    background-color: var(--primary-color);
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
     border: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.85em;
+    padding: 0.4rem 0.8rem;
+    border-radius: var(--border-radius-sm);
 }
 .btn-visit-project:hover {
-    background-color: #0056b3; /* درجة أغمق من اللون الأساسي */
+    background-color: #dab10d;
+    color: var(--text-color-dark);
 }
-
-/* --- About Page Specific Styling --- */
-.about-card {
-    border: none;
-    border-radius: var(--border-radius);
-    box-shadow: var(--card-shadow);
-    background-color: var(--card-bg);
-}
-.profile-image-placeholder {
-    width: 180px;
-    height: 180px;
-    background-color: #e9ecef; /* لون خلفية خفيف للصورة */
-    border: 5px solid white; /* إطار أبيض للصورة */
-}
-.about-card .section-subtitle {
-    margin-top: 1.5rem;
-}
-.skill-item {
-    background-color: var(--light-bg);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.skill-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0.25rem 1rem rgba(0,0,0,0.1);
-}
-.skill-icon {
-    color: var(--primary-color);
-}
-.skill-item h6 {
-    font-weight: 600;
-    color: #333;
-}
-.skill-item small {
-    font-size: 0.8em;
-    color: #777;
-}
-.btn-contact {
-    background-color: var(--primary-color);
-    color: white;
-    border-radius: var(--border-radius);
-    padding: 0.6rem 1.2rem;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
-}
-.btn-contact:hover {
-    background-color: #0056b3;
-    color: white;
-}
-
-/* --- Footer --- */
-.site-footer {
-    background-color: #343a40; /* لون خلفية داكن للفوتر */
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9em;
-}
-.site-footer p {
-    margin-bottom: 0;
-}
-
-/* --- Response Messages Styling (in form) --- */
-#addProjectResponseMessage, #responseMessage /* For older ID if still used */ {
-    font-size: 0.9em;
-    padding: 0.75rem 1.25rem;
-    border-radius: var(--border-radius);
-    text-align: center;
-}
-#addProjectResponseMessage.success, #responseMessage.success {
-    color: #0f5132;
-    background-color: #d1e7dd;
-    border: 1px solid #badbcc;
-}
-#addProjectResponseMessage.error, #responseMessage.error {
-    color: #842029;
-    background-color: #f8d7da;
-    border: 1px solid #f5c2c7;
-}
-
-/* --- Loading/No Sites Messages --- */
-#noProjectsMessage, #loadingProjectsMessage {
-    font-family: var(--font-family-body);
-}
-/* --- Project Card Animation --- */
-.project-card-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-}
-/* ... (كل التنسيقات السابقة كما هي) ... */
-
-/* --- Delete Button Styling for Project Card --- */
 .btn-delete-project {
-    color: #dc3545; /* Bootstrap danger color */
+    color: #e74c3c; /* Red for delete */
     background-color: transparent;
     border: none;
     padding: 0.25rem 0.5rem;
-    opacity: 0.7;
-    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
 }
 .btn-delete-project:hover {
-    color: #a71d2a; /* Darker danger color */
+    color: #c0392b; /* Darker red */
     opacity: 1;
-    transform: scale(1.1);
+    transform: scale(1.15); /* Slightly larger pop on hover */
 }
 
-/* Styling for delete confirmation message if needed */
-#deleteConfirmMessage {
-    /* يمكنك إضافة تنسيقات خاصة هنا إذا أردت */
+/* --- Homepage Specific Styling (`index.html` new) --- */
+.hero-section {
+    background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(22, 160, 133, 0.85) 100%), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'); /* Example background - replace with your own or a solid color/gradient */
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed; /* Parallax effect */
+    min-height: calc(100vh - var(--navbar-height)); /* Full viewport height minus navbar */
+    padding: 4rem 0;
+}
+.profile-pic-hero .profile-image-placeholder-hero {
+    width: 180px;
+    height: 180px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent placeholder */
+    border: 5px solid rgba(255, 255, 255, 0.8);
+    display: flex; /* ensure icon is centered */
+    align-items: center;
+    justify-content: center;
+}
+.hero-title {
+    font-family: var(--font-family-headings);
+    font-weight: 900; /* Very bold for hero title */
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+.hero-subtitle {
+    font-family: var(--font-family-body);
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+}
+.hero-btn {
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 50px; /* Pill shaped buttons */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+.btn-primary.hero-btn { /* Specific styling for primary hero button */
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-color-dark);
+}
+.btn-primary.hero-btn:hover {
+    background-color: #dab10d;
+    border-color: #dab10d;
+    color: var(--text-color-dark);
+}
+
+#about-preview-section .lead {
+    font-size: 1.1rem;
+    max-width: 700px; /* Limit width for readability */
+}
+
+.project-card-mainpage { /* For cards on homepage */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-soft);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.project-card-mainpage:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-strong);
+}
+.project-card-header-mainpage {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    padding: 0.75rem 1.25rem;
+}
+.project-card-header-mainpage .card-title {
+     font-family: var(--font-family-headings);
+     font-weight: 600;
+     font-size: 1.1rem;
+}
+.project-description-mainpage {
+    font-size: 0.9rem;
+    color: #555e65;
+}
+.project-card-footer-mainpage {
+    background-color: transparent;
+    border-top: 1px solid var(--border-color);
+}
+.btn-visit-project-mainpage {
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
+    border:none;
+    font-weight: 600;
+}
+.btn-visit-project-mainpage:hover {
+    background-color: #dab10d;
+    color: var(--text-color-dark);
+}
+
+#contact-section .social-icons .social-icon-link {
+    color: var(--primary-color);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+#contact-section .social-icons .social-icon-link:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+
+/* --- About Page (`about.html`) Styling --- */
+.about-card { /* Already styled generally, add specifics if needed */
+    padding: 2rem;
+}
+.profile-image-placeholder { /* For about page */
+    width: 200px;
+    height: 200px;
+    background-color: var(--light-bg);
+    border: 6px solid var(--card-bg); /* White border from card */
+}
+.skill-item {
+    background-color: var(--light-bg);
+    border-radius: var(--border-radius-sm);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    padding: 1.25rem 1rem; /* More padding */
+}
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-soft);
+    background-color: var(--card-bg);
+}
+.skill-icon {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem !important; /* Ensure correct spacing */
+}
+.skill-item h6 {
+    font-family: var(--font-family-headings);
+    font-weight: 600;
+    color: var(--text-color-dark);
+    font-size: 1rem;
+}
+.skill-item small {
+    font-size: 0.8em;
+    color: #7f8c8d;
+}
+.btn-contact { /* For about page contact buttons */
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+    border-radius: var(--border-radius-md); /* More rounded */
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-contact:hover {
+    background-color: #2c3e50; /* Slightly darker primary */
+    color: var(--text-color-light);
+    transform: translateY(-2px);
+}
+
+/* --- Footer Styling (General for all pages) --- */
+.site-footer, .site-footer-mainpage { /* Combined for consistency */
+    background-color: var(--primary-color); /* Darker footer */
+    color: rgba(255, 255, 255, 0.8); /* Lighter text on dark footer */
+    font-size: 0.9em;
+    padding: 1.5rem 0; /* More padding */
+}
+.site-footer p, .site-footer-mainpage p {
+    margin-bottom: 0;
+}
+.site-footer .fa-heart, .site-footer-mainpage .fa-heart {
+    color: var(--secondary-color); /* Heart color */
+}
+
+
+/* --- Response/Message Styling (Dashboard) --- */
+#addProjectResponseMessage, #deleteConfirmMessage {
+    font-size: 0.95em;
+    padding: 0.8rem 1.25rem;
+    border-radius: var(--border-radius-sm);
+    text-align: center;
+    margin-top: 1rem;
+}
+#addProjectResponseMessage.alert-success, #deleteConfirmMessage.alert-success { /* Success messages */
+    color: #0f5132; 
+    background-color: #d1e7dd; 
+    border-color: #badbcc; 
+}
+#addProjectResponseMessage.alert-danger, #deleteConfirmMessage.alert-danger, #deleteConfirmMessage.alert-warning { /* Error/Warning messages */
+    color: #842029; 
+    background-color: #f8d7da; 
+    border-color: #f5c2c7; 
+}
+#deleteConfirmMessage.alert-warning { /* Specific for warning */
+    color: #664d03;
+    background-color: #fff3cd;
+    border-color: #ffecb5;
+}
+
+
+/* Project Card Animation (Dashboard - from script.js) */
+.project-card-item {
+    opacity: 0;
+    transform: translateY(25px); /* Slightly more pronounced effect */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Spinner (Dashboard) */
+#loadingProjectsMessage .spinner-border {
+    color: var(--primary-color) !important; /* Use primary color for spinner */
+}
+
+/* No projects message (Dashboard) */
+#noProjectsMessage.alert-info {
+    background-color: #cff4fc; /* Bootstrap info background */
+    color: #055160; /* Bootstrap info text */
+    border-color: #b6effb; /* Bootstrap info border */
 }

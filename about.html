@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="metaTitleAboutPage">عني - سعيد هاني</title>
+    <title id="metaTitleAboutPage">عني - سعيد هاني | مطور ويب</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,9 +12,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-bs-theme="light">
-
-    <nav class="navbar navbar-expand-lg fixed-top main-navbar scrolled-navbar shadow-sm"> <div class="container">
+<body data-bs-theme="light"> <nav class="navbar navbar-expand-lg fixed-top main-navbar scrolled-navbar shadow-sm">
+        <div class="container">
             <a class="navbar-brand fw-bold" href="index.html" id="navBrandSiteNameAbout">
                 <span class="brand-icon"><i class="fas fa-meteor"></i></span> سعيد هاني
             </a>
@@ -33,13 +32,11 @@
                         <a class="nav-link" href="index.html#projects-preview-section" id="navLinkProjectsAbout"><i class="fas fa-bolt me-1"></i>أعمالي</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact-section" id="navLinkContactAbout"><i class="fas fa-envelope-open-text me-1"></i>تواصل</a>
+                        <a class="nav-link" href="index.html#contact-section" id="navLinkContactAbout"><i class="fas fa-paper-plane me-1"></i>تواصل</a>
                     </li>
                     <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0 language-selector-container">
-                        <button class="btn btn-sm btn-lang-switcher-icon" onclick="applyGlobalTranslations('ar')" id="langBtnArPage" title="العربية">
-                            <i class="fi fi-eg"></i> </button>
-                        <button class="btn btn-sm btn-lang-switcher-icon" onclick="applyGlobalTranslations('en')" id="langBtnEnPage" title="English">
-                            <i class="fi fi-gb"></i> </button>
+                        <button class="btn btn-sm btn-lang-switcher-icon" id="langBtnAr" title="العربية">AR</button>
+                        <button class="btn btn-sm btn-lang-switcher-icon" id="langBtnEn" title="English">EN</button>
                     </li>
                 </ul>
             </div>
@@ -57,8 +54,8 @@
                         <div class="row g-0 g-md-5 align-items-center">
                             <div class="col-md-4 text-center mb-4 mb-md-0">
                                 <div class="profile-image-container mx-auto shadow-lg">
-                                    <img src="assets/images/said_hany_profile.jpg" alt="سعيد هاني - مطور ويب" class="img-fluid profile-actual-image" onerror="this.style.display='none'; document.getElementById('profileIconPlaceholder').style.display='flex';">
-                                    <div id="profileIconPlaceholder" class="profile-image-placeholder-icon" style="display: none;">
+                                    <img src="assets/images/said_hany_profile.jpg" alt="سعيد هاني - مطور ويب" class="img-fluid profile-actual-image" onerror="this.style.display='none'; document.getElementById('profileIconPlaceholderAbout').style.display='flex';">
+                                    <div id="profileIconPlaceholderAbout" class="profile-image-placeholder-icon" style="display: none;">
                                         <i class="fas fa-user-tie fa-6x text-muted-custom"></i>
                                     </div>
                                 </div>
@@ -71,11 +68,13 @@
                                     أهلاً بكم! أنا سعيد هاني، مطور ويب مصري شغوف بكل ما هو جديد في عالم التقنية. أركز حاليًا على تعميق خبراتي في تطوير الواجهات الأمامية (Frontend) باستخدام أحدث الأدوات والتقنيات، بالإضافة إلى بناء أساس قوي في تطوير الواجهات الخلفية (Backend).
                                 </p>
                                 <p class="fs-6" id="aboutAmbition">
-                                    أسعى دائمًا لتحويل الأفكار المبتكرة إلى مشاريع ويب عملية وتفاعلية تضيف قيمة للمستخدم. أؤمن بأن التعلم المستمر، الشغف بالتفاصيل، والسعي نحو الإتقان هي مفاتيح النجاح في هذا المجال المتجدد باستمرار.
+                                    أسعى دائمًا لتحويل الأفكار المبتكرة إلى مشاريع ويب عملية وتفاعلية تضيف قيمة للمستخدم. أؤمن بأن التعلم المستمر، الشغف بالتفاصيل، والسعي نحو الإتقان هي مفاتيح النجاح في هذا المجال المتجدد باستمرار. هذه الرحلة في تطوير الويب بالنسبة لي ليست مجرد عمل، بل هي شغف ومتعة في بناء الأشياء من الصفر ورؤيتها تنبض بالحياة.
                                 </p>
                             </div>
                         </div>
+                        
                         <hr class="my-4 my-md-5 stylish-hr-mainpage">
+                        
                         <div class="skills-subsection">
                             <h3 class="section-subtitle text-center mb-4 fw-bold" id="mySkillsTitle"><i class="fas fa-cogs me-2 text-secondary"></i>مهاراتي التقنية</h3>
                             <div class="row text-center g-3">
@@ -86,17 +85,19 @@
                                 <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fab fa-python fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillPython">Python <small class='d-block text-muted-custom'>(مع Flask)</small></h6></div></div>
                                 <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fas fa-server fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillBackend">مفاهيم Backend <small class='d-block text-muted-custom'>(أساسيات)</small></h6></div></div>
                                 <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fab fa-wordpress fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillWP">WordPress <small class='d-block text-muted-custom'>(أتعلمه)</small></h6></div></div>
-                                <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fas fa-feather-alt fa-3x skill-icon mb-2"></i> <h6 class="mb-0" id="skillElementor">Elementor <small class='d-block text-muted-custom'>(أتعلمه)</small></h6></div></div>
+                                 <div class="col-6 col-md-4 col-lg-3 d-flex align-items-stretch"><div class="skill-item p-3 w-100"><i class="fas fa-feather-alt fa-3x skill-icon mb-2"></i> <h6 class="mb-0" id="skillElementor">Elementor <small class='d-block text-muted-custom'>(أتعلمه)</small></h6></div></div>
                             </div>
                         </div>
+                         
                         <hr class="my-4 my-md-5 stylish-hr-mainpage">
+                         
                         <div class="contact-subsection text-center">
-                            <h3 class="section-subtitle mb-4 fw-bold" id="contactMeTitle"><i class="fas fa-comments me-2 text-secondary"></i>تواصل معي</h3>
-                            <p class="lead fs-5" id="contactPrompt">يسعدني دائمًا أن أسمع منك، سواء كان لديك استفسار، اقتراح، أو فرصة للتعاون. يمكنك التواصل معي عبر:</p>
-                            <div class="mt-4">
+                             <h3 class="section-subtitle mb-4 fw-bold" id="contactMeTitle"><i class="fas fa-comments me-2 text-secondary"></i>تواصل معي</h3>
+                             <p class="lead fs-5" id="contactPrompt">يسعدني دائمًا أن أسمع منك، سواء كان لديك استفسار، اقتراح، أو فرصة للتعاون. يمكنك التواصل معي عبر:</p>
+                             <div class="mt-4">
                                 <a href="mailto:elsaiedhany.dev@gmail.com" class="btn btn-contact-custom btn-lg mx-2 my-2 shadow-sm"><i class="fas fa-at fa-fw me-2"></i>البريد الإلكتروني</a>
                                 <a href="https://github.com/elsaiedhany" class="btn btn-contact-custom btn-lg mx-2 my-2 shadow-sm" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-alt fa-fw me-2"></i>حسابي على GitHub</a>
-                            </div>
+                             </div>
                         </div>
                     </div>
                 </div>
@@ -110,7 +111,7 @@
         </div>
     </footer>
     
-    <a href="https://wa.me/201000000000?text=مرحباً%20سعيد،%20لدي%20استفسار%20بخصوص%20موقعك." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="تواصل معي عبر واتساب">
+    <a href="https://wa.me/201000693317?text=مرحباً%20سعيد،%20لدي%20استفسار%20بخصوص%20صفحة%20\"عني\"%20في%20موقعك." class="whatsapp-float" target="_blank" rel="noopener noreferrer" title="تواصل معي عبر واتساب">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -131,9 +132,13 @@
             animatedSectionsAbout.forEach(section => {
                 sectionObserverAbout.observe(section);
             });
-        } else { // Fallback for older browsers
+        } else { 
              animatedSectionsAbout.forEach(section => section.classList.add('fade-in-up'));
         }
+
+        // Ensure current year is set in footer
+        const yearSpanAboutFooter = document.getElementById('currentYearAboutPage');
+        if(yearSpanAboutFooter) yearSpanAboutFooter.textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

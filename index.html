@@ -3,106 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title id="metaTitle">لوحة تحكم المشاريع - سعيد هاني</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>سعيد هاني - مطور ويب</title> <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Open+Sans:wght@400;600&family=El+Messiri:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Open+Sans:wght@400;600&family=El+Messiri:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body data-bs-theme="light">
+<body class="homepage" data-bs-theme="light">
 
-    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm main-navbar">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html" id="navBrandSiteName">
-                <i class="fas fa-rocket me-2"></i>سعيد هاني | لوحة المشاريع
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-code me-2"></i>سعيد هاني
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html" id="navLinkHome"><i class="fas fa-tasks me-1"></i>إدارة المشاريع</a>
+                        <a class="nav-link active" aria-current="page" href="index.html"><i class="fas fa-home me-1"></i>الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html" id="navLinkAbout"><i class="fas fa-user-circle me-1"></i>عني</a>
+                        <a class="nav-link" href="about.html"><i class="fas fa-user-tie me-1"></i>عني</a>
                     </li>
-                    <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
-                        <button class="btn btn-sm btn-lang-switcher me-2" onclick="setLanguage('ar')" id="langBtnAr">AR</button>
-                        <button class="btn btn-sm btn-lang-switcher" onclick="setLanguage('en')" id="langBtnEn">EN</button>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects-preview-section"><i class="fas fa-briefcase me-1"></i>أبرز المشاريع</a>
                     </li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact-section"><i class="fas fa-envelope me-1"></i>تواصل معي</a>
+                    </li>
+                    </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container site-main-content">
-        <section id="add-project-section" class="py-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 col-md-10">
-                    <div class="card project-form-card">
-                        <div class="card-body p-4 p-md-5">
-                            <h2 class="card-title text-center mb-4" id="formTitle"><i class="fas fa-plus-circle me-2"></i>إضافة مشروع جديد</h2>
-                            <form id="projectForm">
-                                <div class="mb-3">
-                                    <label for="projectName" class="form-label" id="labelProjectName">اسم المشروع:</label>
-                                    <input type="text" class="form-control form-control-lg" id="projectName" name="projectName" required placeholder="مثال: موقع شخصي متكامل">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="projectUrl" class="form-label" id="labelProjectUrl">رابط المشروع (URL):</label>
-                                    <input type="url" class="form-control form-control-lg" id="projectUrl" name="projectUrl" required placeholder="https://example.com">
-                                </div>
-                                <div class="mb-4">
-                                    <label for="projectDescription" class="form-label" id="labelProjectDescription">وصف المشروع:</label>
-                                    <textarea class="form-control form-control-lg" id="projectDescription" name="projectDescription" rows="4" required placeholder="اكتب وصفًا موجزًا للمشروع وأهم التقنيات المستخدمة..."></textarea>
-                                </div>
-                                <div id="addProjectResponseMessage" class="mb-3" style="min-height: 24px;"></div>
-                                <button type="submit" class="btn btn-submit-project w-100 btn-lg" id="submitProjectButton"><i class="fas fa-paper-plane me-2"></i>إضافة المشروع</button>
-                            </form>
+    <header class="hero-section text-center text-white d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="profile-pic-hero mb-4">
+                <div class="profile-image-placeholder-hero rounded-circle shadow-lg mx-auto d-flex align-items-center justify-content-center">
+                    <i class="fas fa-user fa-5x text-light"></i>
+                </div>
+            </div>
+            <h1 class="hero-title display-4 fw-bolder">مرحباً، أنا سعيد هاني</h1>
+            <p class="hero-subtitle lead fs-4 mb-4">مطور ويب شغوف، متخصص في تحويل الأفكار إلى واقع رقمي إبداعي.</p>
+            <a href="about.html" class="btn btn-lg btn-primary hero-btn me-2"><i class="fas fa-user-circle me-2"></i>اعرف المزيد عني</a>
+            <a href="#projects-preview-section" class="btn btn-lg btn-outline-light hero-btn"><i class="fas fa-eye me-2"></i>شاهد أعمالي</a>
+        </div>
+    </header>
+
+    <main class="container site-main-content py-5">
+        <section id="about-preview-section" class="text-center my-5">
+            <h2 class="section-title-mainpage"><i class="fas fa-feather-alt me-2"></i>لمحة سريعة</h2>
+            <p class="lead text-muted col-md-8 mx-auto">
+                أنا مطور ويب أركز على بناء تجارب مستخدم سلسة وجذابة. أستخدم أحدث التقنيات مثل HTML, CSS, JavaScript، وأتعلم حاليًا WordPress و Elementor. لدي أيضًا خبرة بسيطة في تطوير الباك إند، وأستمتع بتحويل التحديات إلى حلول برمجية.
+            </p>
+        </section>
+
+        <hr class="stylish-hr-mainpage my-5">
+
+        <section id="projects-preview-section" class="my-5">
+            <h2 class="section-title-mainpage text-center"><i class="fas fa-laptop-code me-2"></i>أبرز المشاريع</h2>
+            <p class="text-center text-muted mb-5">نظرة على بعض المشاريع التي عملت عليها. للمزيد، يمكنك زيارة لوحة التحكم الخاصة بي.</p>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="projectsPreviewContainer">
+                <div class="col">
+                    <div class="card project-card-mainpage h-100">
+                        <div class="card-header project-card-header-mainpage">
+                            <h5 class="card-title mb-0">موقع التقوى (مشروع سابق)</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text project-description-mainpage">صفحة هبوط تعريفية بتصميم بسيط وواضح، تركز على سهولة التصفح.</p>
+                        </div>
+                        <div class="card-footer project-card-footer-mainpage">
+                            <a href="https://altaqwa.netlify.app/" class="btn btn-visit-project-mainpage btn-sm" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt me-1"></i>زيارة المشروع</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class="col">
+                    <div class="card project-card-mainpage h-100">
+                        <div class="card-header project-card-header-mainpage">
+                            <h5 class="card-title mb-0">مشروع إبداعي آخر</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text project-description-mainpage">وصف موجز لمشروع آخر مميز قمت به، يعرض مهارات معينة.</p>
+                        </div>
+                        <div class="card-footer project-card-footer-mainpage">
+                            <a href="#" class="btn btn-visit-project-mainpage btn-sm disabled" target="_blank" rel="noopener noreferrer"><i class="fas fa-external-link-alt me-1"></i>قريباً</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card project-card-mainpage h-100">
+                        <div class="card-header project-card-header-mainpage">
+                            <h5 class="card-title mb-0">لوحة تحكم المشاريع</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text project-description-mainpage">الأداة التي تستخدمها لإدارة مشاريعك، تم بناؤها باستخدام Flask و JavaScript.</p>
+                        </div>
+                        <div class="card-footer project-card-footer-mainpage">
+                            <a href="dashboard.html" class="btn btn-visit-project-mainpage btn-sm"><i class="fas fa-tachometer-alt me-1"></i>الذهاب للوحة التحكم</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr class="my-5 stylish-hr">
+         <hr class="stylish-hr-mainpage my-5">
 
-        <section id="saved-projects-section" class="py-5">
-            <h2 class="text-center mb-5 section-title" id="savedProjectsTitle"><i class="fas fa-briefcase me-2"></i>المشاريع المحفوظة</h2>
-            
-            <div id="loadingProjectsMessage" class="text-center" style="display: none;">
-                <p id="loadingProjectsText" class="lead">جاري تحميل المشاريع...</p>
-                <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
-                    <span class="visually-hidden">Loading...</span>
+        <section id="contact-section" class="my-5 text-center">
+            <h2 class="section-title-mainpage"><i class="fas fa-comments me-2"></i>تواصل معي</h2>
+            <p class="lead text-muted col-md-8 mx-auto mb-4">
+                هل لديك فكرة مشروع أو فرصة تعاون؟ لا تتردد في التواصل معي!
+            </p>
+            <a href="mailto:elsaiedhany.dev@gmail.com" class="btn btn-lg btn-primary hero-btn"><i class="fas fa-paper-plane me-2"></i>أرسل لي بريدًا إلكترونيًا</a>
+            <div class="social-icons mt-4">
+                <a href="https://github.com/elsaiedhany" target="_blank" rel="noopener noreferrer" class="social-icon-link me-3 fs-2"><i class="fab fa-github"></i></a>
                 </div>
-            </div>
-
-            <div id="noProjectsMessage" class="alert alert-info text-center fs-5" style="display: none;" role="alert">
-                <i class="fas fa-folder-open me-2"></i><span id="noProjectsText">لا توجد مشاريع محفوظة حتى الآن. قم بإضافة مشروعك الأول!</span>
-            </div>
-            
-            <div id="deleteConfirmMessage" class="alert alert-warning text-center fs-5" style="display: none;" role="alert">
-                </div>
-
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="projectsListContainer">
-                </div>
-            <div class="text-center mt-4">
-                <button class="btn btn-outline-secondary" id="refreshProjectsButton">
-                    <i class="fas fa-sync-alt me-1"></i><span id="refreshProjectsBtnText">تحديث القائمة</span>
-                </button>
-            </div>
         </section>
     </main>
 
-    <footer class="site-footer text-center py-4 mt-auto">
+    <footer class="site-footer-mainpage text-center py-4">
         <div class="container">
-            <p class="mb-0" id="footerText">&copy; <span id="currentYear"></span> <span id="footerOwnerName">سعيد هاني</span>. كل الحقوق محفوظة. <br class="d-block d-sm-none"> تم التصميم بحب <i class="fas fa-heart text-danger"></i></p>
+            <p class="mb-0">&copy; <span id="currentYearMain"></span> سعيد هاني. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script>
+        // Simple script for current year in footer
+        document.getElementById('currentYearMain').textContent = new Date().getFullYear();
+        // For now, this page is mostly static.
+        // If you want language switching or dynamic project loading here later,
+        // you would need to link/adapt script.js or create a new one.
+    </script>
 </body>
 </html>

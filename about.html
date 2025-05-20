@@ -14,27 +14,21 @@
 </head>
 <body data-bs-theme="light">
 
-    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html" id="navBrandSiteNameAbout">
-                <i class="fas fa-rocket me-2"></i>سعيد هاني | لوحة المشاريع
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm main-navbar"> <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"> <i class="fas fa-rocket me-2"></i>سعيد هاني
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="mainNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html" id="navLinkHomeAbout"><i class="fas fa-tasks me-1"></i>إدارة المشاريع</a>
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i>الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="about.html" id="navLinkAboutAbout"><i class="fas fa-user-circle me-1"></i>عني</a>
+                        <a class="nav-link active" aria-current="page" href="about.html"><i class="fas fa-user-tie me-1"></i>عني</a>
                     </li>
-                    <li class="nav-item d-flex align-items-center ms-lg-3 mt-2 mt-lg-0">
-                        <button class="btn btn-sm btn-lang-switcher me-2" onclick="alert('Language switching can be implemented here too!')">AR</button>
-                        <button class="btn btn-sm btn-lang-switcher" onclick="alert('Language switching can be implemented here too!')">EN</button>
-                    </li>
-                </ul>
+                    </ul>
             </div>
         </div>
     </nav>
@@ -42,9 +36,8 @@
     <main class="container site-main-content">
         <section id="about-me-section" class="py-5">
             <div class="text-center mb-5">
-                <h1 class="section-title page-main-title" id="aboutMainTitle"><i class="fas fa-id-card me-2"></i>نبذة تعريفية</h1>
+                <h1 class="section-title-mainpage page-main-title" id="aboutMainTitle"><i class="fas fa-id-card me-2"></i>نبذة تعريفية</h1>
             </div>
-
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-xl-8">
                     <div class="card about-card p-4 p-md-5">
@@ -66,69 +59,57 @@
                                 </p>
                             </div>
                         </div>
-
                         <hr class="my-4 my-md-5 stylish-hr">
-
                         <div class="skills-subsection">
                             <h3 class="section-subtitle text-center mb-4" id="mySkillsTitle"><i class="fas fa-cogs me-2"></i>مهاراتي التقنية</h3>
                             <div class="row text-center">
                                 <div class="col-6 col-md-4 col-lg-3 mb-4">
                                     <div class="skill-item p-3">
-                                        <i class="fab fa-html5 fa-3x skill-icon mb-2"></i>
-                                        <h6 class="mb-0" id="skillHTML">HTML5</h6>
+                                        <i class="fab fa-html5 fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillHTML">HTML5</h6>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg-3 mb-4">
                                     <div class="skill-item p-3">
-                                        <i class="fab fa-css3-alt fa-3x skill-icon mb-2"></i>
-                                        <h6 class="mb-0" id="skillCSS">CSS3</h6>
+                                        <i class="fab fa-css3-alt fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillCSS">CSS3</h6>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg-3 mb-4">
                                     <div class="skill-item p-3">
-                                        <i class="fab fa-js-square fa-3x skill-icon mb-2"></i>
-                                        <h6 class="mb-0" id="skillJS">JavaScript</h6>
+                                        <i class="fab fa-js-square fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillJS">JavaScript</h6>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg-3 mb-4">
                                     <div class="skill-item p-3">
-                                        <i class="fab fa-wordpress fa-3x skill-icon mb-2"></i>
-                                        <h6 class="mb-0" id="skillWP">WordPress <small class="d-block">(أتعلمه)</small></h6>
+                                        <i class="fab fa-wordpress fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillWP">WordPress <small class="d-block">(أتعلمه)</small></h6>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg-3 mb-4">
                                     <div class="skill-item p-3">
-                                        <i class="fas fa-palette fa-3x skill-icon mb-2"></i> 
-                                        <h6 class="mb-0" id="skillElementor">Elementor <small class="d-block">(أتعلمه)</small></h6>
+                                        <i class="fas fa-palette fa-3x skill-icon mb-2"></i> <h6 class="mb-0" id="skillElementor">Elementor <small class="d-block">(أتعلمه)</small></h6>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg-3 mb-4">
                                     <div class="skill-item p-3">
-                                        <i class="fas fa-server fa-3x skill-icon mb-2"></i>
-                                        <h6 class="mb-0" id="skillBackend">باك إند <small class="d-block">(خبرة بسيطة)</small></h6>
+                                        <i class="fas fa-server fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillBackend">باك إند <small class="d-block">(خبرة بسيطة)</small></h6>
                                     </div>
                                 </div>
                                 <div class="col-6 col-md-4 col-lg-3 mb-4">
                                     <div class="skill-item p-3">
-                                        <i class="fab fa-python fa-3x skill-icon mb-2"></i>
-                                        <h6 class="mb-0" id="skillPython">Python <small class="d-block">(مع Flask)</small></h6>
+                                        <i class="fab fa-python fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillPython">Python <small class="d-block">(مع Flask)</small></h6>
                                     </div>
                                 </div>
                                  <div class="col-6 col-md-4 col-lg-3 mb-4">
                                     <div class="skill-item p-3">
-                                        <i class="fab fa-bootstrap fa-3x skill-icon mb-2"></i>
-                                        <h6 class="mb-0" id="skillBootstrap">Bootstrap</h6>
+                                        <i class="fab fa-bootstrap fa-3x skill-icon mb-2"></i><h6 class="mb-0" id="skillBootstrap">Bootstrap</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
                          <hr class="my-4 my-md-5 stylish-hr">
-
                         <div class="contact-subsection text-center">
                              <h3 class="section-subtitle mb-4" id="contactMeTitle"><i class="fas fa-envelope-open-text me-2"></i>تواصل معي</h3>
                              <p class="lead" id="contactPrompt">يسعدني دائمًا التواصل وتبادل الخبرات. يمكنك إيجادي على:</p>
-                             <a href="mailto:elsaiedhany@example.com" class="btn btn-contact mx-2 my-2"><i class="fas fa-envelope fa-fw me-2"></i>البريد الإلكتروني</a>
-                             <a href="#" class="btn btn-contact mx-2 my-2" id="linkedinLink"><i class="fab fa-linkedin fa-fw me-2"></i>LinkedIn</a>
+                             <a href="mailto:elsaiedhany.dev@gmail.com" class="btn btn-contact mx-2 my-2"><i class="fas fa-envelope fa-fw me-2"></i>البريد الإلكتروني</a>
                              <a href="https://github.com/elsaiedhany" class="btn btn-contact mx-2 my-2" target="_blank" rel="noopener noreferrer"><i class="fab fa-github fa-fw me-2"></i>GitHub</a>
                         </div>
                     </div>
@@ -137,19 +118,16 @@
         </section>
     </main>
 
-    <footer class="site-footer text-center py-4 mt-auto">
-        <div class="container">
-            <p class="mb-0" id="footerTextAbout">&copy; <span id="currentYearAbout"></span> <span id="footerOwnerNameAbout">سعيد هاني</span>. كل الحقوق محفوظة.</p>
+    <footer class="site-footer-mainpage text-center py-4 mt-auto"> <div class="container">
+            <p class="mb-0">&copy; <span id="currentYearAboutPage"></span> سعيد هاني. جميع الحقوق محفوظة.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Simple script for current year in footer
-        document.getElementById('currentYearAbout').textContent = new Date().getFullYear();
-        // Language switching and other dynamic content for this page would be in script.js or a dedicated about-script.js
-        // For now, main language is Arabic as per the html tag.
-        // IDs are provided for future JavaScript internationalization if needed.
+        document.getElementById('currentYearAboutPage').textContent = new Date().getFullYear();
+        // Add specific JS for this page if needed, e.g., language switching.
+        // For now, it will inherit styles and use static Arabic content.
     </script>
 </body>
 </html>

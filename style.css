@@ -1,4 +1,4 @@
-/* STYLESHEET: Said Hany - Professional & Creative Portfolio v2 */
+/* STYLESHEET: Said Hany - Portfolio & Dashboard v3 (Responsive Focus) */
 /* Date: May 20, 2025 */
 
 /* --- Google Fonts Import --- */
@@ -7,35 +7,40 @@
 /* --- CSS Variables --- */
 :root {
     --primary-color: #2c3e50;       /* Dark Slate Blue */
+    --primary-color-rgb: 44, 62, 80; /* For rgba usage */
     --secondary-color: #e67e22;     /* Carrot Orange */
     --accent-color: #3498db;        /* Peter River Blue */
+    
     --light-bg: #f4f6f8;           /* Very Light Grey */
     --card-bg: #ffffff;
     --text-color-dark: #34495e;    /* Wet Asphalt */
-    --text-color-light: #ecf0f1;   /* Clouds White */
-    --border-color: #dfe4ea;
+    --text-color-light: #fdfdfd;   /* Off-White for better contrast on dark */
+    --text-muted-custom: #7f8c8d;  /* Slightly adjusted muted color */
+    --border-color: #d1d8de;       /* Lighter border color */
     
-    --font-family-main: 'Poppins', 'El Messiri', sans-serif; /* Poppins for En, El Messiri for Ar */
-    --font-family-headings: 'Poppins', 'El Messiri', sans-serif; /* Using Poppins for impact */
+    --font-family-main: 'Poppins', 'El Messiri', sans-serif;
+    --font-family-headings: 'Poppins', 'El Messiri', sans-serif; 
     
-    --base-font-size: 16px;
-    --border-radius-sm: 0.3rem;
-    --border-radius-md: 0.6rem;
-    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.06);
-    --box-shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.1);
+    --base-font-size: 1rem; /* 16px */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.8rem; /* Larger radius for hero elements */
+    --box-shadow-light: 0 3px 10px rgba(0, 0, 0, 0.05);
+    --box-shadow-medium: 0 7px 25px rgba(0, 0, 0, 0.08);
 
-    --navbar-height: 75px;
+    --navbar-height: 70px;
     --navbar-bg-scrolled: rgba(255, 255, 255, 0.98);
-    --navbar-bg-transparent: rgba(44, 62, 80, 0.2); /* Darker transparent for hero */
+    --navbar-bg-transparent: rgba(25, 35, 45, 0.3); /* Darker transparent for hero */
 }
 
-/* --- General Styling --- */
-html { scroll-behavior: smooth; }
+/* --- General Styling & Resets --- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
 body {
     font-family: var(--font-family-main);
     background-color: var(--light-bg);
     color: var(--text-color-dark);
-    line-height: 1.8;
+    line-height: 1.7;
     font-size: var(--base-font-size);
     padding-top: var(--navbar-height);
     display: flex;
@@ -43,321 +48,165 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; /* Prevent horizontal scroll on body */
 }
 body.rtl { direction: rtl; }
 body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4, body.rtl h5, body.rtl h6,
-body.rtl .navbar-brand, body.rtl .nav-link, body.rtl button, body.rtl label, body.rtl p, body.rtl .card-title {
+body.rtl .navbar-brand, body.rtl .nav-link, body.rtl button, body.rtl label, body.rtl p, body.rtl .card-title,
+body.rtl input::placeholder, body.rtl textarea::placeholder {
     font-family: 'El Messiri', 'Poppins', sans-serif;
 }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--secondary-color); text-decoration: none; transition: color 0.2s ease; }
+a:hover { color: var(--accent-color); text-decoration: none; }
 
 /* --- Navbar --- */
 .main-navbar {
     min-height: var(--navbar-height);
-    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    transition: background-color 0.35s ease-in-out, box-shadow 0.35s ease-in-out;
     box-shadow: var(--box-shadow-light);
+    z-index: 1030; /* Ensure navbar is above other content */
 }
-.initial-navbar-transparent { /* For homepage hero */
-    background-color: var(--navbar-bg-transparent) !important; /* Important to override Bootstrap */
-    border-bottom: 1px solid rgba(255,255,255,0.2);
+.initial-navbar-transparent {
+    background-color: var(--navbar-bg-transparent) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
     box-shadow: none;
 }
 .initial-navbar-transparent .navbar-brand,
-.initial-navbar-transparent .nav-link {
-    color: var(--text-color-light) !important;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-.initial-navbar-transparent .navbar-toggler-icon {
-    filter: brightness(0) invert(1); /* Make toggler icon white */
-}
-.scrolled-navbar { /* When navbar is scrolled or not on hero */
+.initial-navbar-transparent .nav-link { color: var(--text-color-light) !important; }
+.initial-navbar-transparent .navbar-toggler-icon { filter: brightness(0) invert(1); }
+
+.scrolled-navbar {
     background-color: var(--navbar-bg-scrolled) !important;
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--box-shadow-medium) !important;
 }
-.scrolled-navbar .navbar-brand { color: var(--primary-color) !important; text-shadow: none;}
-.scrolled-navbar .nav-link { color: var(--text-color-dark) !important; text-shadow: none;}
+.scrolled-navbar .navbar-brand { color: var(--primary-color) !important; }
+.scrolled-navbar .nav-link { color: var(--text-color-dark) !important; }
 .scrolled-navbar .navbar-toggler-icon { filter: none; }
 
-
-.navbar-brand {
-    font-weight: 700;
-    font-size: 1.75rem;
-}
+.navbar-brand { font-weight: 700; font-size: 1.65rem; }
 .navbar-brand i { color: var(--secondary-color); }
-
-.nav-link {
+.navbar-nav .nav-link {
     font-weight: 500;
-    padding: 0.5rem 1rem !important;
-    margin: 0 0.3rem;
+    padding: 0.6rem 0.9rem !important;
+    margin: 0 0.2rem;
     border-radius: var(--border-radius-sm);
-    transition: color 0.3s ease, background-color 0.3s ease;
 }
-.nav-link:hover, .nav-link.active {
-    color: var(--secondary-color) !important;
-    background-color: rgba(var(--rgb-primary-color, 44, 62, 80), 0.05) !important; /* Subtle hover */
-}
-.main-navbar.initial-navbar-transparent .nav-link:hover,
-.main-navbar.initial-navbar-transparent .nav-link.active {
-    background-color: rgba(255,255,255,0.15) !important;
-    color: var(--text-color-light) !important;
-}
-.nav-link.active { font-weight: 700; }
-.nav-link i { margin-right: 0.5rem; font-size: 0.95em; }
-body.rtl .nav-link i { margin-left: 0.5rem; margin-right: 0; }
+.navbar-nav .nav-link i { margin-right: 0.4rem; font-size: 0.9em; }
+body.rtl .navbar-nav .nav-link i { margin-left: 0.4rem; margin-right: 0; }
 
-.btn-lang-switcher { /* Shared between common-script.js for dashboard and other pages */
-    font-weight: 500;
-    border: 1px solid; /* Color will be set by navbar context */
-    padding: 0.3rem 0.8rem;
-    font-size: 0.8em;
-    border-radius: 50px;
-    transition: background-color 0.2s ease, color 0.2s ease;
+.btn-lang-switcher { /* Styles are in previous CSS, ensure consistency */
+    font-weight: 500; border: 1px solid; padding: 0.3rem 0.8rem; font-size: 0.8em; border-radius: 50px;
 }
-.scrolled-navbar .btn-lang-switcher, .main-navbar:not(.initial-navbar-transparent) .btn-lang-switcher {
-    color: var(--primary-color);
-    border-color: var(--primary-color);
-}
-.scrolled-navbar .btn-lang-switcher:hover, .main-navbar:not(.initial-navbar-transparent) .btn-lang-switcher:hover,
-.scrolled-navbar .btn-lang-switcher.active-lang, .main-navbar:not(.initial-navbar-transparent) .btn-lang-switcher.active-lang {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-}
-.initial-navbar-transparent .btn-lang-switcher {
-    color: var(--text-color-light);
-    border-color: var(--text-color-light);
-}
-.initial-navbar-transparent .btn-lang-switcher:hover,
-.initial-navbar-transparent .btn-lang-switcher.active-lang {
-    background-color: var(--text-color-light);
-    color: var(--primary-color);
-}
-
+/* Contextual lang button colors already handled in previous CSS */
 
 /* --- Hero Section (index.html) --- */
 .hero-section {
-    background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(52, 73, 94, 0.85)), 
-                url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center center; /* New background image */
-    background-size: cover;
-    min-height: calc(100vh - var(--navbar-height) + var(--navbar-height)); /* Full viewport height */
-    padding: 6rem 0;
-    position: relative; /* For overlay */
+    background-attachment: fixed;
+    min-height: 100vh; /* Full viewport for hero */
+    padding: 5rem 1rem; /* Responsive padding */
 }
-.hero-overlay { /* Optional overlay for better text readability */
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.2); /* Darker overlay */
-    z-index: 1;
-}
-.hero-content { position: relative; z-index: 2; }
-
 .profile-pic-hero .profile-image-placeholder-hero {
-    width: 170px;
-    height: 170px;
-    background-color: rgba(255, 255, 255, 0.15);
-    border: 6px solid rgba(255, 255, 255, 0.7);
+    width: clamp(130px, 20vw, 180px); /* Responsive size */
+    height: clamp(130px, 20vw, 180px);
 }
-.profile-pic-hero .profile-image-placeholder-hero i {
-    color: rgba(255, 255, 255, 0.8);
-}
+.hero-title { font-size: clamp(2.2rem, 5.5vw, 4rem); }
+.hero-subtitle { font-size: clamp(1.1rem, 2.8vw, 1.6rem); }
+.hero-btn { padding: 0.7rem 1.8rem; font-size: clamp(0.9rem, 2vw, 1.1rem); margin: 0.5rem; }
 
-.hero-title {
+/* --- Main Content & Sections --- */
+.site-main-content { flex-grow: 1; padding-top: 2rem; padding-bottom: 3.5rem; }
+.section-title-mainpage, .page-main-title, #saved-projects-section .section-title {
     font-family: var(--font-family-headings);
-    font-weight: 900;
-    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive font size */
-    text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
-}
-.hero-subtitle {
-    color: rgba(255, 255, 255, 0.95);
-    font-weight: 400;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-    font-size: clamp(1.2rem, 3vw, 1.75rem);
-}
-.btn-primary-custom.hero-btn {
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--text-color-dark); /* Dark text on yellow for contrast */
     font-weight: 700;
-}
-.btn-primary-custom.hero-btn:hover {
-    background-color: #d4ac0d; /* Darker yellow */
-    border-color: #d4ac0d;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-}
-.btn-secondary-custom.hero-btn {
-    background-color: transparent;
-    border: 2px solid var(--text-color-light);
-    color: var(--text-color-light);
-    font-weight: 700;
-}
-.btn-secondary-custom.hero-btn:hover {
-    background-color: var(--text-color-light);
     color: var(--primary-color);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-}
-
-/* --- General Section Title (Fancy) --- */
-.fancy-title {
-    display: inline-block; /* To make the ::before/::after work correctly with text-align:center */
+    margin-bottom: 2.5rem !important;
     position: relative;
-    margin-bottom: 3rem !important; /* Override Bootstrap margin */
+    padding-bottom: 0.8rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive titles */
 }
-.fancy-title span {
-    position: relative;
-    padding: 0 1rem;
-    background-color: var(--light-bg); /* Match section background or body background */
-    z-index: 1;
+.section-title-mainpage::after, .page-main-title::after, #saved-projects-section .section-title::after {
+    content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+    width: clamp(70px, 15vw, 100px); height: 4px; /* Responsive underline */
+    background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
 }
-.fancy-title::before, .fancy-title::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 40%; /* Adjust as needed */
-    height: 2px;
-    background-color: var(--border-color);
-    z-index: 0;
-}
-.fancy-title::before { left: 0; transform: translateX(-80%); } /* Adjust positioning */
-.fancy-title::after { right: 0; transform: translateX(80%); } /* Adjust positioning */
-.bg-light-subtle .fancy-title span { background-color: #fcfcfd; } /* If section has different bg */
+.fancy-title span { background-color: var(--light-bg); } /* Ensure it matches page bg */
+.bg-light-subtle .fancy-title span { background-color: #fcfcfd; }
 
-/* --- Card Styling (Homepage Preview Cards & About Page) --- */
-.project-card-mainpage, .about-card {
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--box-shadow-light);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* --- Card Styling (Universal with variations) --- */
+.card { border: none; border-radius: var(--border-radius-md); box-shadow: var(--box-shadow-light); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.card:hover { transform: translateY(-5px); box-shadow: var(--box-shadow-medium); }
+
+.project-form-card-dashboard, .about-card { /* Specific cards */
     background-color: var(--card-bg);
 }
-.project-card-mainpage:hover, .about-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--box-shadow-medium);
-}
-.card-img-top-placeholder { /* For homepage project cards */
-    height: 180px;
-    background-color: #e9ecef;
-    border-top-left-radius: var(--border-radius-md);
-    border-top-right-radius: var(--border-radius-md);
-}
-.project-card-header-mainpage, .about-card .card-header { /* For potential use in about card */
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-    border-bottom: none;
-}
-.project-card-header-mainpage .card-title, .about-card .card-header .card-title {
-     font-family: var(--font-family-headings);
-     font-weight: 600;
-}
-.project-description-mainpage, .about-card p, .about-card ul {
-    color: #566573; /* Softer text color */
-}
-.btn-visit-project-mainpage {
-    background-color: var(--secondary-color);
-    color: var(--text-color-dark);
-    border:none;
-    font-weight: 600;
-}
-.btn-visit-project-mainpage:hover {
-    background-color: #d4ac0d;
-    color: var(--text-color-dark);
-}
+.project-form-card-dashboard .card-title, .about-card .section-subtitle { color: var(--primary-color); font-weight: 600; }
 
-/* --- Contact Section (Homepage) --- */
-#contact-section .social-icon-link {
-    color: var(--primary-color);
-    font-size: 2.2rem !important; /* Larger social icons */
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-#contact-section .social-icon-link:hover {
-    color: var(--secondary-color);
-    transform: translateY(-3px) scale(1.1);
-}
+/* Form elements in dashboard */
+.project-form-card-dashboard .form-control { background-color: #fdfdfe; border-color: var(--border-color); }
+.project-form-card-dashboard .form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb), 0.2); }
+.btn-submit-project-dashboard { background-color: var(--accent-color); border-color: var(--accent-color); color: var(--text-color-light); }
+.btn-submit-project-dashboard:hover { background-color: #2980b9; border-color: #2980b9; } /* Darker accent */
 
-/* --- Dashboard Specific Styles (`dashboard.html`) --- */
-.project-form-card-dashboard { /* If you want slightly different styling for dashboard form card */
-    border: none;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--box-shadow-light); /* Softer shadow for dashboard form */
-    background-color: var(--card-bg);
-}
-.project-form-card-dashboard .card-title {
-    color: var(--primary-color);
-}
-.project-form-card-dashboard .form-label {
-    color: var(--text-color-dark);
-}
-/* Other dashboard elements (project cards, buttons) will inherit from general .project-card, .btn-visit-project etc. */
-.btn-submit-project-dashboard { /* Button in dashboard form */
-    background-color: var(--accent-color); /* Different color for dashboard submit */
-    border-color: var(--accent-color);
-    color: var(--text-color-light);
-    font-weight: 700;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-.btn-submit-project-dashboard:hover {
-    background-color: #ca6f1e; /* Darker accent */
-    color: var(--text-color-light);
-    transform: translateY(-2px);
-}
-.btn-outline-secondary-custom { /* Refresh button on dashboard */
-    border-color: var(--secondary-color);
-    color: var(--secondary-color);
-    font-weight: 500;
-}
-.btn-outline-secondary-custom:hover {
-    background-color: var(--secondary-color);
-    color: var(--text-color-dark);
-}
-.text-primary-custom { color: var(--primary-color) !important; }
+/* Project cards (dashboard & homepage) */
+.project-card-header, .project-card-header-mainpage { background-color: var(--primary-color); color: var(--text-color-light); }
+.project-card-header .card-title, .project-card-header-mainpage .card-title { font-size: 1.15rem; font-weight: 600; }
+.project-description, .project-description-mainpage { font-size: 0.9rem; color: var(--text-muted-custom); min-height: 65px; }
+.btn-visit-project, .btn-visit-project-mainpage { background-color: var(--secondary-color); color: var(--text-color-dark); font-weight: 500; font-size: 0.85em; }
+.btn-visit-project:hover, .btn-visit-project-mainpage:hover { background-color: #d4ac0d; }
+.btn-delete-project { color: #c0392b; opacity: 0.75; } /* Keep delete button subtle */
+.btn-delete-project:hover { opacity: 1; transform: scale(1.1); }
 
+/* Card image placeholder (homepage) */
+.card-img-top-placeholder { height: 160px; background-color: #eef1f3; border-radius: var(--border-radius-md) var(--border-radius-md) 0 0; }
 
-/* --- About Page Specifics (`about.html`) --- */
-.profile-image-placeholder { /* For about page image */
-    width: 220px; /* Larger placeholder */
-    height: 220px;
-    border: 8px solid var(--card-bg);
-}
-.skill-item { /* For skills on about page */
-    background-color: #fdfdfe; /* Slightly off-white */
-    border: 1px solid #e7e9ec;
-    box-shadow: var(--box-shadow-light);
-}
-.skill-item:hover {
-    border-color: var(--secondary-color);
-}
-.skill-icon { color: var(--secondary-color); } /* Skills icons use secondary color */
-.btn-contact { /* Buttons on about page */
-    background-color: var(--accent-color);
-    color: var(--text-color-light);
-}
-.btn-contact:hover {
-    background-color: #ca6f1e;
-    color: var(--text-color-light);
-}
+/* --- About Page --- */
+.profile-image-placeholder { width: clamp(150px, 25vw, 200px); height: clamp(150px, 25vw, 200px); }
+.skill-item { background-color: #fdfdfe; border: 1px solid #e7e9ec; box-shadow: var(--box-shadow-light); padding: 1rem; }
+.skill-item:hover { border-color: var(--secondary-color); }
+.skill-icon { color: var(--secondary-color); }
+.btn-contact { background-color: var(--accent-color); color: var(--text-color-light); }
+.btn-contact:hover { background-color: #2980b9; }
 
-/* --- Footer (General) --- */
-.site-footer-mainpage { /* Applied to all footers */
-    background-color: var(--primary-color);
-    color: rgba(236, 240, 241, 0.85); /* Lighter text on dark footer */
-    padding: 2rem 0;
-    font-size: 0.95em;
-}
+/* --- Footer --- */
+.site-footer-mainpage { background-color: var(--primary-color); color: rgba(236, 240, 241, 0.8); padding: 1.8rem 0; font-size: 0.9rem; }
 .site-footer-mainpage .fa-heart { color: var(--secondary-color); }
 
-/* --- Response Messages (Dashboard) --- */
-#addProjectResponseMessage.alert-success, #deleteConfirmMessage.alert-success {
-    background-color: #d1e7dd; color: #0f5132; border-color: #badbcc;
-}
-#addProjectResponseMessage.alert-danger, #deleteConfirmMessage.alert-danger {
-    background-color: #f8d7da; color: #842029; border-color: #f5c2c7;
-}
-#deleteConfirmMessage.alert-warning {
-    background-color: #fff3cd; color: #664d03; border-color: #ffecb5;
-}
-#deleteConfirmMessage button { margin-top: 0.5rem; }
+/* --- Messages & Alerts (Dashboard) --- */
+#addProjectResponseMessage, #deleteConfirmMessage { font-size: 0.9rem; }
+/* Colors for messages already defined, ensure they use these classes */
 
 /* --- Project Card Animation (Dashboard) --- */
-.project-card-item {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+.project-card-item { opacity: 0; transform: translateY(25px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 991.98px) { /* Medium devices (tablets, less than 992px) */
+    .navbar-nav { margin-top: 0.5rem; }
+    .hero-section { padding: 4rem 1rem; }
+    .hero-title { font-size: clamp(2rem, 5vw, 3rem); }
+    .hero-subtitle { font-size: clamp(1rem, 2.5vw, 1.4rem); }
+}
+
+@media (max-width: 767.98px) { /* Small devices (landscape phones, less than 768px) */
+    body { padding-top: calc(var(--navbar-height) - 10px); /* Adjust if navbar height changes on mobile */ }
+    .main-navbar { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .navbar-brand { font-size: 1.4rem; }
+    .hero-btn { padding: 0.6rem 1.5rem; font-size: 0.9rem; }
+    .section-title-mainpage, .page-main-title, #saved-projects-section .section-title { font-size: clamp(1.6rem, 5vw, 2rem); margin-bottom: 2rem !important; }
+    .fancy-title::before, .fancy-title::after { width: 30%; } /* Shorter lines for fancy title */
+    .fancy-title::before { transform: translateX(-60%); }
+    .fancy-title::after { transform: translateX(60%); }
+    .card-body { padding: 1.5rem; } /* Reduce padding in cards */
+    .project-form-card-dashboard .card-body { padding: 1.5rem !important; }
+    .profile-image-placeholder { width: clamp(120px, 30vw, 160px); height: clamp(120px, 30vw, 160px); }
+}
+
+@media (max-width: 575.98px) { /* Extra small devices (portrait phones, less than 576px) */
+    .hero-section { text-align: center; } /* Ensure text is centered on small screens */
+    .hero-btn { display: block; width: 80%; margin-left: auto; margin-right: auto; }
+    .hero-btn:not(:last-child) { margin-bottom: 1rem !important; }
+    .social-icons .fs-1 { font-size: 1.8rem !important; } /* Smaller social icons */
+    #contact-section .lead { font-size: 1rem; }
 }

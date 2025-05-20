@@ -1,389 +1,254 @@
-/* STYLESHEET: Professional & Creative Redesign for Said Hany's Portfolio & Dashboard */
-/* Author: Gemini AI (with Said's Vision) */
+/* STYLESHEET: Said Hany - Professional & Creative Portfolio v2 */
 /* Date: May 20, 2025 */
 
-/* --- Google Fonts Import (Ensure this is also linked in HTML or choose one method) --- */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Open+Sans:wght@400;600&family=El+Messiri:wght@500;600;700&display=swap');
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&family=El+Messiri:wght@500;600;700&display=swap');
 
-/* --- CSS Variables (Theme Colors & Properties) --- */
+/* --- CSS Variables --- */
 :root {
-    --primary-color: #34495e; /* Dark Blue/Charcoal */
-    --secondary-color: #f1c40f; /* Golden Yellow */
-    --accent-color: #e67e22; /* Orange/Burnt Sienna for specific highlights */
+    --primary-color: #2c3e50;       /* Dark Slate Blue */
+    --secondary-color: #e67e22;     /* Carrot Orange */
+    --accent-color: #3498db;        /* Peter River Blue */
+    --light-bg: #f4f6f8;           /* Very Light Grey */
+    --card-bg: #ffffff;
+    --text-color-dark: #34495e;    /* Wet Asphalt */
+    --text-color-light: #ecf0f1;   /* Clouds White */
+    --border-color: #dfe4ea;
     
-    --light-bg: #ecf0f1; /* Light Gray Background */
-    --card-bg: #ffffff; /* White for cards */
-    --text-color-dark: #2c3e50; /* Dark text on light backgrounds */
-    --text-color-light: #f8f9fa; /* Light text on dark backgrounds */
-    --border-color: #bdc3c7; /* Subtle border color */
-    
-    --font-family-headings: 'Montserrat', 'El Messiri', sans-serif;
-    --font-family-body: 'Open Sans', 'El Messiri', sans-serif;
+    --font-family-main: 'Poppins', 'El Messiri', sans-serif; /* Poppins for En, El Messiri for Ar */
+    --font-family-headings: 'Poppins', 'El Messiri', sans-serif; /* Using Poppins for impact */
     
     --base-font-size: 16px;
-    --border-radius-sm: 0.25rem;
-    --border-radius-md: 0.5rem;
-    --box-shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.08);
-    --box-shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.12);
+    --border-radius-sm: 0.3rem;
+    --border-radius-md: 0.6rem;
+    --box-shadow-light: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --box-shadow-medium: 0 6px 20px rgba(0, 0, 0, 0.1);
 
-    --navbar-height: 70px; /* Adjust if needed */
+    --navbar-height: 75px;
+    --navbar-bg-scrolled: rgba(255, 255, 255, 0.98);
+    --navbar-bg-transparent: rgba(44, 62, 80, 0.2); /* Darker transparent for hero */
 }
 
-/* --- General Body & HTML Styling --- */
-html {
-    scroll-behavior: smooth;
-}
-
+/* --- General Styling --- */
+html { scroll-behavior: smooth; }
 body {
-    font-family: var(--font-family-body);
+    font-family: var(--font-family-main);
     background-color: var(--light-bg);
     color: var(--text-color-dark);
-    line-height: 1.75;
+    line-height: 1.8;
     font-size: var(--base-font-size);
-    padding-top: var(--navbar-height); /* For fixed navbar */
+    padding-top: var(--navbar-height);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-
-body.rtl {
-    direction: rtl;
-}
+body.rtl { direction: rtl; }
 body.rtl h1, body.rtl h2, body.rtl h3, body.rtl h4, body.rtl h5, body.rtl h6,
-body.rtl .navbar-brand, body.rtl .nav-link, body.rtl button, body.rtl label, body.rtl p {
-    font-family: 'El Messiri', 'Open Sans', sans-serif;
+body.rtl .navbar-brand, body.rtl .nav-link, body.rtl button, body.rtl label, body.rtl p, body.rtl .card-title {
+    font-family: 'El Messiri', 'Poppins', sans-serif;
 }
 
-/* --- Navbar Styling --- */
-.main-navbar { /* Applied to all navbars */
-    background-color: rgba(255, 255, 255, 0.97); /* Slightly less transparent white */
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
-    padding-top: 0.6rem;
-    padding-bottom: 0.6rem;
+/* --- Navbar --- */
+.main-navbar {
     min-height: var(--navbar-height);
-    transition: background-color 0.3s ease;
+    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    box-shadow: var(--box-shadow-light);
 }
+.initial-navbar-transparent { /* For homepage hero */
+    background-color: var(--navbar-bg-transparent) !important; /* Important to override Bootstrap */
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    box-shadow: none;
+}
+.initial-navbar-transparent .navbar-brand,
+.initial-navbar-transparent .nav-link {
+    color: var(--text-color-light) !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+.initial-navbar-transparent .navbar-toggler-icon {
+    filter: brightness(0) invert(1); /* Make toggler icon white */
+}
+.scrolled-navbar { /* When navbar is scrolled or not on hero */
+    background-color: var(--navbar-bg-scrolled) !important;
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--box-shadow-medium) !important;
+}
+.scrolled-navbar .navbar-brand { color: var(--primary-color) !important; text-shadow: none;}
+.scrolled-navbar .nav-link { color: var(--text-color-dark) !important; text-shadow: none;}
+.scrolled-navbar .navbar-toggler-icon { filter: none; }
+
 
 .navbar-brand {
-    font-family: var(--font-family-headings);
     font-weight: 700;
-    font-size: 1.6rem; /* Slightly larger */
-    color: var(--primary-color) !important;
-    transition: color 0.3s ease;
+    font-size: 1.75rem;
 }
-.navbar-brand:hover {
-    color: var(--secondary-color) !important;
-}
-.navbar-brand i {
-    color: var(--secondary-color); /* Icon color */
-    margin-right: 0.5rem;
-}
-body.rtl .navbar-brand i {
-    margin-left: 0.5rem;
-    margin-right: 0;
-}
+.navbar-brand i { color: var(--secondary-color); }
 
 .nav-link {
-    font-family: var(--font-family-body);
-    font-weight: 600; /* Slightly bolder nav links */
-    color: var(--text-color-dark) !important;
-    padding: 0.6rem 1rem !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.3rem;
     border-radius: var(--border-radius-sm);
-    transition: background-color 0.2s ease, color 0.2s ease;
-    margin: 0 0.25rem; /* Spacing between nav items */
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
-.nav-link:hover {
-    background-color: var(--primary-color);
+.nav-link:hover, .nav-link.active {
+    color: var(--secondary-color) !important;
+    background-color: rgba(var(--rgb-primary-color, 44, 62, 80), 0.05) !important; /* Subtle hover */
+}
+.main-navbar.initial-navbar-transparent .nav-link:hover,
+.main-navbar.initial-navbar-transparent .nav-link.active {
+    background-color: rgba(255,255,255,0.15) !important;
     color: var(--text-color-light) !important;
 }
-.nav-link.active {
-    background-color: var(--primary-color);
-    color: var(--text-color-light) !important;
-    font-weight: 700;
-}
-.nav-link i {
-    margin-right: 0.4rem;
-    font-size: 0.9em; /* Slightly smaller icon in nav link */
-}
-body.rtl .nav-link i {
-    margin-left: 0.4rem;
-    margin-right: 0;
-}
+.nav-link.active { font-weight: 700; }
+.nav-link i { margin-right: 0.5rem; font-size: 0.95em; }
+body.rtl .nav-link i { margin-left: 0.5rem; margin-right: 0; }
 
-.btn-lang-switcher {
-    font-family: var(--font-family-body);
-    font-weight: 600;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-    padding: 0.3rem 0.7rem;
-    font-size: 0.85em;
-    border-radius: 50px; /* Pill shape */
+.btn-lang-switcher { /* Shared between common-script.js for dashboard and other pages */
+    font-weight: 500;
+    border: 1px solid; /* Color will be set by navbar context */
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8em;
+    border-radius: 50px;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
-.btn-lang-switcher:hover,
-.btn-lang-switcher.active-lang {
-    background-color: var(--primary-color);
-    color: var(--text-color-light);
-}
-
-/* --- Main Content Area --- */
-.site-main-content {
-    flex-grow: 1;
-    padding-top: 2.5rem;
-    padding-bottom: 4rem;
-}
-
-/* --- Headings & Titles --- */
-.section-title-mainpage, .page-main-title { /* For index.html and about.html main titles */
-    font-family: var(--font-family-headings);
-    font-weight: 700;
+.scrolled-navbar .btn-lang-switcher, .main-navbar:not(.initial-navbar-transparent) .btn-lang-switcher {
     color: var(--primary-color);
-    margin-bottom: 3rem;
-    position: relative;
-    padding-bottom: 1rem;
-    font-size: 2.5rem; /* Larger title */
-}
-.section-title-mainpage::after, .page-main-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px; /* Wider decorative line */
-    height: 5px;
-    background: linear-gradient(to right, var(--secondary-color), var(--accent-color)); /* Gradient line */
-    border-radius: 3px;
-}
-.section-subtitle { /* For subheadings in about page */
-    font-family: var(--font-family-headings);
-    font-weight: 600;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-}
-.stylish-hr-mainpage, .stylish-hr { /* For index.html and dashboard.html */
-    border: 0;
-    height: 2px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), var(--border-color), rgba(0, 0, 0, 0));
-}
-
-/* --- Card Styling (General & Dashboard) --- */
-.project-form-card, .about-card, .project-card {
-    border: none;
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--box-shadow-soft);
-    background-color: var(--card-bg);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-.project-form-card:hover, .about-card:hover, .project-card:hover {
-    box-shadow: var(--box-shadow-strong);
-    transform: translateY(-3px);
-}
-
-.project-form-card .card-body { /* For dashboard form */
-    padding: 2rem 2.5rem !important;
-}
-.project-form-card .card-title {
-    font-family: var(--font-family-headings);
-    font-weight: 700;
-    color: var(--primary-color);
-}
-.project-form-card .form-label {
-    font-weight: 600;
-    color: var(--text-color-dark);
-}
-.project-form-card .form-control {
-    background-color: var(--light-bg); /* Light background for form fields */
-    border: 1px solid var(--border-color);
-    color: var(--text-color-dark);
-    border-radius: var(--border-radius-sm);
-    padding: 0.8rem 1rem;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.project-form-card .form-control::placeholder {
-    color: #95a5a6; /* Lighter placeholder */
-}
-.project-form-card .form-control:focus {
-    background-color: var(--card-bg);
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.2rem rgba(var(--primary-color-rgb, 52, 73, 94), 0.25); /* Use RGB for primary or fallback */
 }
-.btn-submit-project {
-    background-color: var(--secondary-color);
-    border: none;
-    color: var(--text-color-dark); /* Dark text on yellow button for contrast */
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    padding: 0.9rem 1.5rem;
-    border-radius: var(--border-radius-sm);
-    transition: background-color 0.2s ease, transform 0.2s ease;
-}
-.btn-submit-project:hover {
-    background-color: #dab10d; /* Darker yellow */
-    transform: translateY(-2px);
-    color: var(--text-color-dark);
-}
-
-/* --- Saved Projects Cards (Dashboard) --- */
-#saved-projects-section .section-title { /* Specific title for saved projects section */
-    font-family: var(--font-family-headings);
-    font-weight: 700;
-    color: var(--primary-color);
-    position: relative;
-    padding-bottom: 0.5rem;
-}
-#saved-projects-section .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: var(--secondary-color);
-    border-radius: 2px;
-}
-
-.project-card-header {
+.scrolled-navbar .btn-lang-switcher:hover, .main-navbar:not(.initial-navbar-transparent) .btn-lang-switcher:hover,
+.scrolled-navbar .btn-lang-switcher.active-lang, .main-navbar:not(.initial-navbar-transparent) .btn-lang-switcher.active-lang {
     background-color: var(--primary-color);
     color: var(--text-color-light);
-    padding: 0.8rem 1.25rem;
-    border-bottom: none;
+}
+.initial-navbar-transparent .btn-lang-switcher {
+    color: var(--text-color-light);
+    border-color: var(--text-color-light);
+}
+.initial-navbar-transparent .btn-lang-switcher:hover,
+.initial-navbar-transparent .btn-lang-switcher.active-lang {
+    background-color: var(--text-color-light);
+    color: var(--primary-color);
+}
+
+
+/* --- Hero Section (index.html) --- */
+.hero-section {
+    background: linear-gradient(rgba(44, 62, 80, 0.75), rgba(52, 73, 94, 0.85)), 
+                url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80') no-repeat center center; /* New background image */
+    background-size: cover;
+    min-height: calc(100vh - var(--navbar-height) + var(--navbar-height)); /* Full viewport height */
+    padding: 6rem 0;
+    position: relative; /* For overlay */
+}
+.hero-overlay { /* Optional overlay for better text readability */
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.2); /* Darker overlay */
+    z-index: 1;
+}
+.hero-content { position: relative; z-index: 2; }
+
+.profile-pic-hero .profile-image-placeholder-hero {
+    width: 170px;
+    height: 170px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 6px solid rgba(255, 255, 255, 0.7);
+}
+.profile-pic-hero .profile-image-placeholder-hero i {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-title {
+    font-family: var(--font-family-headings);
+    font-weight: 900;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); /* Responsive font size */
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+}
+.hero-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 400;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    font-size: clamp(1.2rem, 3vw, 1.75rem);
+}
+.btn-primary-custom.hero-btn {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--text-color-dark); /* Dark text on yellow for contrast */
+    font-weight: 700;
+}
+.btn-primary-custom.hero-btn:hover {
+    background-color: #d4ac0d; /* Darker yellow */
+    border-color: #d4ac0d;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+.btn-secondary-custom.hero-btn {
+    background-color: transparent;
+    border: 2px solid var(--text-color-light);
+    color: var(--text-color-light);
+    font-weight: 700;
+}
+.btn-secondary-custom.hero-btn:hover {
+    background-color: var(--text-color-light);
+    color: var(--primary-color);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
+}
+
+/* --- General Section Title (Fancy) --- */
+.fancy-title {
+    display: inline-block; /* To make the ::before/::after work correctly with text-align:center */
+    position: relative;
+    margin-bottom: 3rem !important; /* Override Bootstrap margin */
+}
+.fancy-title span {
+    position: relative;
+    padding: 0 1rem;
+    background-color: var(--light-bg); /* Match section background or body background */
+    z-index: 1;
+}
+.fancy-title::before, .fancy-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40%; /* Adjust as needed */
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 0;
+}
+.fancy-title::before { left: 0; transform: translateX(-80%); } /* Adjust positioning */
+.fancy-title::after { right: 0; transform: translateX(80%); } /* Adjust positioning */
+.bg-light-subtle .fancy-title span { background-color: #fcfcfd; } /* If section has different bg */
+
+/* --- Card Styling (Homepage Preview Cards & About Page) --- */
+.project-card-mainpage, .about-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: var(--card-bg);
+}
+.project-card-mainpage:hover, .about-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--box-shadow-medium);
+}
+.card-img-top-placeholder { /* For homepage project cards */
+    height: 180px;
+    background-color: #e9ecef;
     border-top-left-radius: var(--border-radius-md);
     border-top-right-radius: var(--border-radius-md);
 }
-.project-card-header .card-title {
-    font-family: var(--font-family-headings);
-    font-weight: 600; /* Bolder title for project card */
-    font-size: 1.1rem;
-}
-.project-card .project-description {
-    font-size: 0.9rem;
-    color: #555e65; /* Slightly darker text for description */
-    min-height: 70px;
-    line-height: 1.6;
-}
-.project-card-footer {
-    background-color: transparent;
-    border-top: 1px solid var(--border-color);
-    padding: 0.8rem 1.25rem;
-}
-.btn-visit-project {
-    background-color: var(--secondary-color);
-    color: var(--text-color-dark);
-    border: none;
-    font-weight: 600;
-    font-size: 0.85em;
-    padding: 0.4rem 0.8rem;
-    border-radius: var(--border-radius-sm);
-}
-.btn-visit-project:hover {
-    background-color: #dab10d;
-    color: var(--text-color-dark);
-}
-.btn-delete-project {
-    color: #e74c3c; /* Red for delete */
-    background-color: transparent;
-    border: none;
-    padding: 0.25rem 0.5rem;
-    opacity: 0.8;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-.btn-delete-project:hover {
-    color: #c0392b; /* Darker red */
-    opacity: 1;
-    transform: scale(1.15); /* Slightly larger pop on hover */
-}
-
-/* --- Homepage Specific Styling (`index.html` new) --- */
-.hero-section {
-    background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(22, 160, 133, 0.85) 100%), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'); /* Example background - replace with your own or a solid color/gradient */
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed; /* Parallax effect */
-    min-height: calc(100vh - var(--navbar-height)); /* Full viewport height minus navbar */
-    padding: 4rem 0;
-}
-.profile-pic-hero .profile-image-placeholder-hero {
-    width: 180px;
-    height: 180px;
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent placeholder */
-    border: 5px solid rgba(255, 255, 255, 0.8);
-    display: flex; /* ensure icon is centered */
-    align-items: center;
-    justify-content: center;
-}
-.hero-title {
-    font-family: var(--font-family-headings);
-    font-weight: 900; /* Very bold for hero title */
-    font-size: 3.5rem;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-}
-.hero-subtitle {
-    font-family: var(--font-family-body);
-    color: rgba(255, 255, 255, 0.9);
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-}
-.hero-btn {
-    font-family: var(--font-family-headings);
-    font-weight: 600;
-    padding: 0.8rem 2rem;
-    border-radius: 50px; /* Pill shaped buttons */
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.hero-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
-}
-.btn-primary.hero-btn { /* Specific styling for primary hero button */
-    background-color: var(--secondary-color);
-    border-color: var(--secondary-color);
-    color: var(--text-color-dark);
-}
-.btn-primary.hero-btn:hover {
-    background-color: #dab10d;
-    border-color: #dab10d;
-    color: var(--text-color-dark);
-}
-
-#about-preview-section .lead {
-    font-size: 1.1rem;
-    max-width: 700px; /* Limit width for readability */
-}
-
-.project-card-mainpage { /* For cards on homepage */
-    border: 1px solid var(--border-color);
-    border-radius: var(--border-radius-md);
-    box-shadow: var(--box-shadow-soft);
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-.project-card-mainpage:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--box-shadow-strong);
-}
-.project-card-header-mainpage {
+.project-card-header-mainpage, .about-card .card-header { /* For potential use in about card */
     background-color: var(--primary-color);
     color: var(--text-color-light);
-    padding: 0.75rem 1.25rem;
+    border-bottom: none;
 }
-.project-card-header-mainpage .card-title {
+.project-card-header-mainpage .card-title, .about-card .card-header .card-title {
      font-family: var(--font-family-headings);
      font-weight: 600;
-     font-size: 1.1rem;
 }
-.project-description-mainpage {
-    font-size: 0.9rem;
-    color: #555e65;
-}
-.project-card-footer-mainpage {
-    background-color: transparent;
-    border-top: 1px solid var(--border-color);
+.project-description-mainpage, .about-card p, .about-card ul {
+    color: #566573; /* Softer text color */
 }
 .btn-visit-project-mainpage {
     background-color: var(--secondary-color);
@@ -392,125 +257,107 @@ body.rtl .nav-link i {
     font-weight: 600;
 }
 .btn-visit-project-mainpage:hover {
-    background-color: #dab10d;
+    background-color: #d4ac0d;
     color: var(--text-color-dark);
 }
 
-#contact-section .social-icons .social-icon-link {
+/* --- Contact Section (Homepage) --- */
+#contact-section .social-icon-link {
     color: var(--primary-color);
+    font-size: 2.2rem !important; /* Larger social icons */
     transition: color 0.3s ease, transform 0.3s ease;
 }
-#contact-section .social-icons .social-icon-link:hover {
+#contact-section .social-icon-link:hover {
     color: var(--secondary-color);
-    transform: scale(1.2);
+    transform: translateY(-3px) scale(1.1);
 }
 
-
-/* --- About Page (`about.html`) Styling --- */
-.about-card { /* Already styled generally, add specifics if needed */
-    padding: 2rem;
-}
-.profile-image-placeholder { /* For about page */
-    width: 200px;
-    height: 200px;
-    background-color: var(--light-bg);
-    border: 6px solid var(--card-bg); /* White border from card */
-}
-.skill-item {
-    background-color: var(--light-bg);
-    border-radius: var(--border-radius-sm);
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
-    padding: 1.25rem 1rem; /* More padding */
-}
-.skill-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--box-shadow-soft);
+/* --- Dashboard Specific Styles (`dashboard.html`) --- */
+.project-form-card-dashboard { /* If you want slightly different styling for dashboard form card */
+    border: none;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--box-shadow-light); /* Softer shadow for dashboard form */
     background-color: var(--card-bg);
 }
-.skill-icon {
+.project-form-card-dashboard .card-title {
     color: var(--primary-color);
-    margin-bottom: 0.75rem !important; /* Ensure correct spacing */
 }
-.skill-item h6 {
-    font-family: var(--font-family-headings);
-    font-weight: 600;
+.project-form-card-dashboard .form-label {
     color: var(--text-color-dark);
-    font-size: 1rem;
 }
-.skill-item small {
-    font-size: 0.8em;
-    color: #7f8c8d;
-}
-.btn-contact { /* For about page contact buttons */
-    background-color: var(--primary-color);
+/* Other dashboard elements (project cards, buttons) will inherit from general .project-card, .btn-visit-project etc. */
+.btn-submit-project-dashboard { /* Button in dashboard form */
+    background-color: var(--accent-color); /* Different color for dashboard submit */
+    border-color: var(--accent-color);
     color: var(--text-color-light);
-    border-radius: var(--border-radius-md); /* More rounded */
-    padding: 0.75rem 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
-.btn-contact:hover {
-    background-color: #2c3e50; /* Slightly darker primary */
+.btn-submit-project-dashboard:hover {
+    background-color: #ca6f1e; /* Darker accent */
     color: var(--text-color-light);
     transform: translateY(-2px);
 }
-
-/* --- Footer Styling (General for all pages) --- */
-.site-footer, .site-footer-mainpage { /* Combined for consistency */
-    background-color: var(--primary-color); /* Darker footer */
-    color: rgba(255, 255, 255, 0.8); /* Lighter text on dark footer */
-    font-size: 0.9em;
-    padding: 1.5rem 0; /* More padding */
+.btn-outline-secondary-custom { /* Refresh button on dashboard */
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+    font-weight: 500;
 }
-.site-footer p, .site-footer-mainpage p {
-    margin-bottom: 0;
+.btn-outline-secondary-custom:hover {
+    background-color: var(--secondary-color);
+    color: var(--text-color-dark);
 }
-.site-footer .fa-heart, .site-footer-mainpage .fa-heart {
-    color: var(--secondary-color); /* Heart color */
-}
+.text-primary-custom { color: var(--primary-color) !important; }
 
 
-/* --- Response/Message Styling (Dashboard) --- */
-#addProjectResponseMessage, #deleteConfirmMessage {
+/* --- About Page Specifics (`about.html`) --- */
+.profile-image-placeholder { /* For about page image */
+    width: 220px; /* Larger placeholder */
+    height: 220px;
+    border: 8px solid var(--card-bg);
+}
+.skill-item { /* For skills on about page */
+    background-color: #fdfdfe; /* Slightly off-white */
+    border: 1px solid #e7e9ec;
+    box-shadow: var(--box-shadow-light);
+}
+.skill-item:hover {
+    border-color: var(--secondary-color);
+}
+.skill-icon { color: var(--secondary-color); } /* Skills icons use secondary color */
+.btn-contact { /* Buttons on about page */
+    background-color: var(--accent-color);
+    color: var(--text-color-light);
+}
+.btn-contact:hover {
+    background-color: #ca6f1e;
+    color: var(--text-color-light);
+}
+
+/* --- Footer (General) --- */
+.site-footer-mainpage { /* Applied to all footers */
+    background-color: var(--primary-color);
+    color: rgba(236, 240, 241, 0.85); /* Lighter text on dark footer */
+    padding: 2rem 0;
     font-size: 0.95em;
-    padding: 0.8rem 1.25rem;
-    border-radius: var(--border-radius-sm);
-    text-align: center;
-    margin-top: 1rem;
 }
-#addProjectResponseMessage.alert-success, #deleteConfirmMessage.alert-success { /* Success messages */
-    color: #0f5132; 
-    background-color: #d1e7dd; 
-    border-color: #badbcc; 
-}
-#addProjectResponseMessage.alert-danger, #deleteConfirmMessage.alert-danger, #deleteConfirmMessage.alert-warning { /* Error/Warning messages */
-    color: #842029; 
-    background-color: #f8d7da; 
-    border-color: #f5c2c7; 
-}
-#deleteConfirmMessage.alert-warning { /* Specific for warning */
-    color: #664d03;
-    background-color: #fff3cd;
-    border-color: #ffecb5;
-}
+.site-footer-mainpage .fa-heart { color: var(--secondary-color); }
 
+/* --- Response Messages (Dashboard) --- */
+#addProjectResponseMessage.alert-success, #deleteConfirmMessage.alert-success {
+    background-color: #d1e7dd; color: #0f5132; border-color: #badbcc;
+}
+#addProjectResponseMessage.alert-danger, #deleteConfirmMessage.alert-danger {
+    background-color: #f8d7da; color: #842029; border-color: #f5c2c7;
+}
+#deleteConfirmMessage.alert-warning {
+    background-color: #fff3cd; color: #664d03; border-color: #ffecb5;
+}
+#deleteConfirmMessage button { margin-top: 0.5rem; }
 
-/* Project Card Animation (Dashboard - from script.js) */
+/* --- Project Card Animation (Dashboard) --- */
 .project-card-item {
     opacity: 0;
-    transform: translateY(25px); /* Slightly more pronounced effect */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Spinner (Dashboard) */
-#loadingProjectsMessage .spinner-border {
-    color: var(--primary-color) !important; /* Use primary color for spinner */
-}
-
-/* No projects message (Dashboard) */
-#noProjectsMessage.alert-info {
-    background-color: #cff4fc; /* Bootstrap info background */
-    color: #055160; /* Bootstrap info text */
-    border-color: #b6effb; /* Bootstrap info border */
+    transform: translateY(30px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
